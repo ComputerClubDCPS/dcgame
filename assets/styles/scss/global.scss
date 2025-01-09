@@ -76,10 +76,6 @@ body {
     transform: scale(1.05);
 }
 
-#about {
-    margin-top: 120px;
-}
-
 a {
     color: $text-color;
     text-underline-offset: 2.5px;
@@ -111,6 +107,7 @@ input {
     border-radius: 0 0 0 10px;
     display: flex;
     gap: 10px;
+    z-index: 100;
 }
 
 ::-webkit-scrollbar {
@@ -138,4 +135,32 @@ button {
     border: none;
     cursor: pointer;
     transition-duration: 0.5s;
+}
+
+#infoSection {
+    background-color: rgba($accent-dark, 0.5);
+    margin: none;
+    padding: 10px;
+    margin-top: 120px;
+}
+
+#infoSection h3 {
+    font-weight: 900;
+}
+
+iframe {
+    border: none;
+}
+
+#hamburger-menu {
+    cursor: pointer;
+}
+
+#navbar {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 99;
 }

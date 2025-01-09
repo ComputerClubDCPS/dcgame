@@ -59,3 +59,37 @@ document.addEventListener("DOMContentLoaded", async () => {
         gameContainer.appendChild(createGameBox(gameName));
     });
 });
+
+let flavorText = [
+    "school sucks",
+    "now with 50% more bugs",
+    "i like free games",
+    "i like free movies and tv shows",
+    "remember infinitygamer 😞",
+    "mitochondria is the powerhouse of the cell",
+    "why the website ourple",
+    "new update 🤯",
+    "wisdom is my king", //btw this is my friends name
+];
+
+let randomFlavorText = flavorText[Math.floor(Math.random() * flavorText.length)];
+
+document.getElementById("flavorText").innerHTML = randomFlavorText;
+
+document.getElementById("navbar").style.display = "none";
+
+function toggleMenu() {
+    if (document.getElementById("navbar").style.display == "none") {
+        document.getElementById("navbar").style.display = "unset";
+    } else {
+        document.getElementById("navbar").style.display = "none";
+    }
+}
+
+function redirect(link){
+    if (window.top.location.href !== "about:blank"){
+      window.top.location.href = link;
+    } else {
+      window.parent.location.href = link;
+    }
+  }
