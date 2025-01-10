@@ -1,3 +1,4 @@
+
 // Function to fetch the JSON file
 async function fetchFiles() {
     try {
@@ -37,46 +38,16 @@ function createGameBox(gameName) {
     return gameBox;
 }
 
-// Main function to load games
+/*
 document.addEventListener("DOMContentLoaded", async () => {
-    const gameContainer = document.getElementById("gameContainer");
-    const heading = document.getElementById("heading");
-
-    // Fetch games data
     const gameData = await fetchFiles();
-
-    console.log("Fetched JSON:", gameData); // Debug: ensure data is correct
-
-    // Extract game names
     const gameNames = gameData.map((obj) => obj.name);
     gameNames.sort();
-
-    // Update heading
-    heading.innerHTML = `An archive of ${gameNames.length} HTML5 games`;
-
-    // Populate games
-    gameNames.forEach((gameName) => {
-        gameContainer.appendChild(createGameBox(gameName));
-    });
 });
+*/
 
-let flavorText = [
-    "school sucks",
-    "now with 50% more bugs",
-    "i like free games",
-    "i like free movies and tv shows",
-    "remember infinitygamer 😞",
-    "mitochondria is the powerhouse of the cell",
-    "why the website ourple",
-    "new update 🤯",
-    "wisdom is my king", //btw this is my friends name
-];
 
-let randomFlavorText = flavorText[Math.floor(Math.random() * flavorText.length)];
 
-document.getElementById("flavorText").innerHTML = randomFlavorText;
-
-document.getElementById("navbar").style.display = "none";
 
 function toggleMenu() {
     if (document.getElementById("navbar").style.display == "none") {
@@ -93,3 +64,5 @@ function redirect(link){
       window.parent.location.href = link;
     }
   }
+
+

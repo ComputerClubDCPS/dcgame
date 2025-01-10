@@ -11,6 +11,38 @@ document.addEventListener("DOMContentLoaded", async function (e) {
     // Update the heading with the total number of games
     document.getElementById("heading").textContent =
         "An archive of " + gameNames.length + " games and tons of movies";
+
+
+        let flavorText = [
+            "school sucks",
+            "now with 50% more bugs",
+            "i like free games",
+            "i like free movies and tv shows",
+            "remember infinitygamer 😞",
+            "mitochondria is the powerhouse of the cell",
+            "why the website ourple",
+            "new update 🤯",
+            "wisdom is my king", //btw this is my friends name
+        ];
+        
+        let randomFlavorText = flavorText[Math.floor(Math.random() * flavorText.length)];
+        
+        document.getElementById("flavorText").innerHTML = randomFlavorText;
+        
+        document.getElementById("navbar").style.display = "none";
+        let visitorCount = 0;
+
+        fetch('http://rhenryw.pythonanywhere.com')
+          .then(response => response.text())
+          .then(data => {
+            visitorCount = parseInt(data, 10); // Parse the number from the response
+            console.log('Number:', visitorCount);
+            
+            // Update the page content here
+            document.getElementById("visitorCount").textContent = "Visitor Count: " + (visitorCount + 3100); //3100 is the number of visitors before the counter was added
+          })
+          .catch(error => console.error('Error fetching the number:', error));
+        
 });
 
 function openSVG() {
@@ -63,3 +95,4 @@ function openAboutBlank() {
         window.location.href = localStorage.getItem("redirectURL") || "https://classroom.google.com/";
     }
 }
+
