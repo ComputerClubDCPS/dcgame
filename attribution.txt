@@ -8,4 +8,4 @@ Original repository - LupineVault/LupineVault on Github (https://github.com/Lupi
 
 Current repository - tf7software/LupineVault on GitLab (https://gitlab.com/tf7software/LupineVault/)
 
-© 2024-2025 tf7software, R. Henry Warren, LupineVault, Enzo Passini
+© 2024-2025 tf7software, R. Henry Warren, LupineVault, InfinityLoop
