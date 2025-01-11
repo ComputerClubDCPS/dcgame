@@ -24,7 +24,12 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   try {
-    await registerSW();
+    // Ensure __uv$config is defined before proceeding
+    if (typeof self.__uv$config === "undefined") {
+      throw new Error("Ultraviolet config is not defined.");
+    }
+    
+    await registerSW();  // Register the service worker
   } catch (err) {
     error.textContent = "Failed to register service worker.";
     errorCode.textContent = err.toString();
@@ -32,12 +37,17 @@ form.addEventListener("submit", async (event) => {
   }
 
   const url = search(address.value, searchEngine.value);
-  location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+  location.href = self.__uv$config.prefix + self.__uv$config.encodeUrl(url);
 });
 
 async function launchURL(openURL) {
   try {
-    await registerSW();
+    // Ensure __uv$config is defined before proceeding
+    if (typeof self.__uv$config === "undefined") {
+      throw new Error("Ultraviolet config is not defined.");
+    }
+
+    await registerSW();  // Register the service worker
   } catch (err) {
     error.textContent = "Failed to register service worker.";
     errorCode.textContent = err.toString();
@@ -45,13 +55,17 @@ async function launchURL(openURL) {
   }
 
   const url = search(openURL, searchEngine.value);
-  location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+  location.href = self.__uv$config.prefix + self.__uv$config.encodeUrl(url);
 }
-
 
 async function launchGame(openURL) {
   try {
-    await registerSW();
+    // Ensure __uv$config is defined before proceeding
+    if (typeof self.__uv$config === "undefined") {
+      throw new Error("Ultraviolet config is not defined.");
+    }
+
+    await registerSW();  // Register the service worker
   } catch (err) {
     error.textContent = "Failed to register service worker.";
     errorCode.textContent = err.toString();
@@ -59,7 +73,7 @@ async function launchGame(openURL) {
   }
 
   const url = search(openURL, searchEngine.value);
-  const encodedUrl = __uv$config.prefix + __uv$config.encodeUrl(url);
+  const encodedUrl = self.__uv$config.prefix + self.__uv$config.encodeUrl(url);
   localStorage.setItem('storedURL', encodedUrl);
-  window.location.href="/g/gframe.html"
+  window.location.href = "/g/gframe.html";
 }
