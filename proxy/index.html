@@ -1,44 +1,15 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-      <!--<link rel="stylesheet" href="example.css">-->
-      <link rel="stylesheet" href="example.css">
-      <link rel="stylesheet" href="index.css">
-      <link rel="icon" type="image/x-icon" href="../assets/favicons/favicon.ico">
-      <script type="text/javascript" src="//counter.websiteout.net/js/7/10/5/0"></script>
-      <link rel="shortcut icon" type="image/jpg" href="~/favicon.ico"/>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-   </head>
-   <body>
-      <div id="header">
-         <img src="Title.png" alt="Logo" id="title">
-      </div>
-      <div id="content">
-         
-         <p>A Custom Version of <a href="https://shadowtunnel.vercel.app">Shadow Tunnel</a> by <a href="https://github.com/sldgjrg">sldgjrg</a></p>
-
-         <form id="uv-form"">
-            <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
-            <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
-          </form>
-          <div class="desc left-margin">
-            <p id="uv-error"></p>
-            <pre id="uv-error-code"></pre>
-          </div>
-         
-      </div>
-      <script src="uv/uv.bundle.js" defer></script>
-      <script src="uv/uv.config.js" defer></script>
-      <script src="register-sw.js" defer></script>
-      <script src="search.js" defer></script>
-      <script src="index.js" defer></script>
-      <script src="error.js" defer></script>
-      <div id="footer">
-         <footer><a href="privacy-policy.html">Privacy Policy</a> - By Using LupineVault You Agree To Our <a href="tos.html">Terms of Service</a> - Thanks To <a href="https://screen.studio/">Screen Studio</a> For Their Support</footer>
-      </div>
-   </body>
+<head>
+  <title>Redirect Page</title>
+  <script>
+    window.onload = function() {
+      window.location.href = "/static/"; // Replace with your desired URL
+    };
+  </script>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+  <p>If you are not redirected, <a href="/static/">click here</a>.</p>
+</body>
 </html>
