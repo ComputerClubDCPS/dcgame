@@ -1,15 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Redirect Page</title>
-  <script>
-    window.onload = function() {
-      window.location.href = "static/"; // Replace with your desired URL
-    };
-  </script>
-</head>
-<body>
-  <h1>Redirecting...</h1>
-  <p>If you are not redirected, <a href="/static/">click here</a>.</p>
-</body>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>LupineVault - Free Web Browser - School Safe & 100% Teacher Approved!</title>
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <link rel="stylesheet" href="index.css">
+      
+      <link rel="shortcut icon" type="image/jpg" href="~/favicon.ico"/>
+      
+      <link rel="stylesheet" href="../../assets/font-awesome/css/all.css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+        <style>
+            #popularSites img {
+                width: 50px;
+                height: 50px;
+                margin: 10px;
+                cursor: pointer;
+                border-radius: 10px;
+                transition: transform 0.2s;
+            }
+            #popularSites img:hover {
+                transform: scale(1.1);
+            }
+
+            #bigTitle img {
+               width: 75vw;
+            }
+        </style>
+   </head>
+   <body>
+      <span id="corner-menu"><i id="hamburger-menu" class="fa-2x fa-solid fa-navicon" onclick="toggleMenu()"></i></span>
+      <canvas id="canvas"></canvas>
+      <div id="header">
+         <img src="Title.png" alt="Logo" id="bigTitle">
+      </div>
+      <div id="content">
+         
+         <p>A Custom Version of <a href="https://shadowtunnel.vercel.app">Shadow Tunnel</a> by <a href="https://github.com/sldgjrg">sldgjrg</a></p>
+
+         <form id="uv-form">
+            <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
+            <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
+          </form>
+           <div id="popularSites">
+                <img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube" onclick="autofill('https://www.youtube.com')">
+                <img src="https://img.icons8.com/color/48/discord-logo.png" alt="Discord" onclick="autofill('https://www.discord.com')">
+                <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" onclick="autofill('https://www.google.com')">
+                <img src="https://img.icons8.com/color/48/tiktok--v1.png" alt="TikTok" onclick="autofill('https://www.tiktok.com')">
+                <img src="https://img.icons8.com/color/48/github.png" alt="GitHub" onclick="autofill('https://www.github.com')">
+                <img src="https://img.icons8.com/color/48/twitch.png" alt="Twitch" onclick="autofill('https://www.twitch.tv')">
+                 <img src="https://img.icons8.com/color/48/chatgpt.png" alt="ChatGPT" onclick="autofill('https://www.chatgpt.com')">
+            </div>
+          <div class="desc left-margin">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
+          </div>
+        
+      </div>
+      <script src="stars.js"></script>
+      <script src="uv/uv.bundle.js" charset="UTF-8" defer></script>
+      <script src="uv/uv.config.js" charset="UTF-8" defer></script>
+      <script src="register-sw.js" charset="UTF-8" defer></script>
+      <script src="search.js" charset="UTF-8" defer></script>
+      <script src="index.js" charset="UTF-8" defer></script>
+      <div id="footer">
+         <footer><a href="privacy-policy.html">Privacy Policy</a> - By Using LupineVault You Agree To Our <a href="tos.html">Terms of Service</a> - Thanks To <a href="https://screen.studio/">Screen Studio</a> For Their Support</footer>
+      </div>
+   </body>
 </html>
