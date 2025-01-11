@@ -4,28 +4,32 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
       <link rel="stylesheet" href="index.css">
-      <script type="text/javascript" src="//counter.websiteout.net/js/7/10/5/0"></script>
-      <link rel="shortcut icon" type="image/jpg" href="~/favicon.ico"/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+      <link rel="icon" type="image/png" href="/logo.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3783528285963344"
+     crossorigin="anonymous"></script>
+   
+      <script async src="https://arc.io/widget.min.js#sDLPbtpG"></script>
+      
    </head>
    <body>
+   
       <div id="header">
          <img src="logo.gif" alt="Logo">
       </div>
       <div id="content">
-         <h1>Search the Web and use the BEST static proxy!</h1>
-
+         <h1 onclick="launchURL('netflix.com')">Search the Web and use the FIRST static proxy</h1>
          <form id="uv-form"">
-            <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
+            <input id="uv-search-engine" value="" type="hidden"/> 
             <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
           </form>
           <div class="desc left-margin">
             <p id="uv-error"></p>
             <pre id="uv-error-code"></pre>
           </div>
-         <a href="https://discord.gg/zJhPJYJCeJ" target="_blank" class="fa-brands fa-discord"></a>
+         <a href="https://discord.gg/f8yqSBenuk" target="_blank" class="fa-brands fa-discord"></a>
          <a href="https://github.com/TheTIW/UV-Static" target="_blank"class="fa-brands fa-github"></a>
          <a href="https://starttiw.org" target="_blank"class="fa-solid fa-cloud"></a>
       </div>
@@ -34,9 +38,23 @@
       <script src="register-sw.js" defer></script>
       <script src="search.js" defer></script>
       <script src="index.js" defer></script>
-      <script src="error.js" defer></script>
-      <div id="footer">
-         <p>&copy; 2023 TIW. All rights reserved.</p>
-      </div>
-   </body>
+   <!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a08f0af13760458b882afa6f6e7f1025"}'></script><!-- Cloudflare Pages Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"90073d9c4b3ddba6","version":"2024.10.5","r":1,"token":"1f54a7c5df03489795ac156ce813112e","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</body>
 </html>
+
+
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+  // Get the search engine value from local storage
+  var searchEngine = localStorage.getItem("searchengine");
+
+  // Set the value of the input field
+  var searchInput = document.getElementById("uv-search-engine");
+  searchInput.value = searchEngine || "https://www.google.com/search?q=";
+});
+
+</script>
+
+
+<script src="/settings/js/index.js"></script>
+<script src="/settings/js/settings.js"></script>
