@@ -1,15 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Redirect Page</title>
-  <script>
-    window.onload = function() {
-      window.location.href = "static/"; // Replace with your desired URL
-    };
-  </script>
-</head>
-<body>
-  <h1>Redirecting...</h1>
-  <p>If you are not redirected, <a href="/static/">click here</a>.</p>
-</body>
+    <head>
+        <title>LupineVault - Free Web Browser - School Safe & 100% Teacher Approved!</title>
+        <link rel="icon" href="logo.png" type="image/png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2649992288894875" crossorigin="anonymous"></script>
+        
+        <script src="/uv/uv.bundle.js"></script>
+        <script src="/uv/uv.config.js"></script>
+
+        <script>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker.register("/uv/sw.js", {
+                        scope: __uv$config.prefix,
+                    });
+                });
+            }
+            
+            function autofill(url) {
+                document.getElementById('urlInput').value = url;
+            }
+        </script>
+
+        <link rel="stylesheet" href="example.css">
+        <link rel="stylesheet" href="global.css">
+
+        <style>
+            #popularSites img {
+                width: 50px;
+                height: 50px;
+                margin: 10px;
+                cursor: pointer;
+                border-radius: 10px;
+                transition: transform 0.2s;
+            }
+            #popularSites img:hover {
+                transform: scale(1.1);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Canvas for stars animation -->
+        <canvas id="canvas"></canvas>
+
+        <div id="container">
+            <img src="Title.png" class="logo">
+            
+            <p>A Custom Version of <a href="https://shadowtunnel.vercel.app">Shadow Tunnel</a> by <a href="https://github.com/sldgjrg">sldgjrg</a></p>
+            
+            <div id="searchArea">
+                <input type="text" id="urlInput" placeholder="Enter URL here">
+                <button id="searchButton">Search</button>
+            </div>
+
+            <!-- Images for popular sites -->
+            <div id="popularSites">
+                <img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube" onclick="autofill('https://www.youtube.com')">
+                <img src="https://img.icons8.com/color/48/discord-logo.png" alt="Discord" onclick="autofill('https://www.discord.com')">
+                <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" onclick="autofill('https://www.google.com')">
+                <img src="https://img.icons8.com/color/48/tiktok--v1.png" alt="TikTok" onclick="autofill('https://www.tiktok.com')">
+                <img src="https://img.icons8.com/color/48/github.png" alt="GitHub" onclick="autofill('https://www.github.com')">
+                <img src="https://img.icons8.com/color/48/twitch.png" alt="Twitch" onclick="autofill('https://www.twitch.tv')">
+                 <img src="https://img.icons8.com/color/48/chatgpt.png" alt="ChatGPT" onclick="autofill('https://www.chatgpt.com')">
+            </div>
+            <p><a href="https://lupinevault.com">Back To LupineVault</a></p>
+        </div>
+
+        <iframe id="iframeWindow" class="iframeWindow"></iframe>
+    </body>
+    <script src="example.js"></script>
+    <script src="uv.js"></script>
 </html>
