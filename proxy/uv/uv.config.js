@@ -3,8 +3,8 @@ self.__uv$config = {
     bare:'https://bare.benrogo.net',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
-    handler: '/static/uv/uv.handler.js',
-    bundle: '/static/uv/uv.bundle.js',
-    config: '/static/uv/uv.config.js',
-    sw: '/static/uv/uv.sw.js',
+    handler: '/proxy/uv/uv.handler.js',
+    bundle: '/proxy/uv/uv.bundle.js',
+    config: '/proxy/uv/uv.config.js',
+    sw: '/proxy/uv/uv.sw.js',
 };
