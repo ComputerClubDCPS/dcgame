@@ -36,6 +36,16 @@ ___Embeds:___
 ```
 sites.google.com/view/lupinevault/home
 ```
+___Official (Proxy Only):___
+```
+uvstatic-vercel.vercel.app
+```
+```
+learn2study.infofoc.us
+```
+```
+edgenuity.pages.dev
+```
 
 <sub>Over 96% of our games work on alt domains, but there are a few, such as buckshot roulette, that _may_ not work. Some official alt domains, such as learningminds.tech, and some embedding domains such as Google Sites, do not experience this issue.</sub>
 
