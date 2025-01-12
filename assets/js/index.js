@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", async function (e) {
             "why the website ourple",
             "new update 🤯",
             "wisdom is my king", //btw this is my friends name
+	    "over 8 million views!",
         ];
         
         let randomFlavorText = flavorText[Math.floor(Math.random() * flavorText.length)];
