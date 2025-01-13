@@ -1,6 +1,6 @@
 InfinityLoop (https://github.com/InfinityLoop1) - Mostly Frontend
 
-tf7software (Github: https://github.com/tf7software Gitlab: https://gitlab.com/tf7software/) - Mostly backend & repository management
+tf7software (https://rhw.one/) - Mostly backend & repository management
 
 Organization - LupineVault on Github (https://github.com/LupineVault/) - This is no longer up to date, as the repo has moved to GitLab
 
