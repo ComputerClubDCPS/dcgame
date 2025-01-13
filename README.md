@@ -46,6 +46,15 @@ learn2study.infofoc.us
 ```
 edgenuity.pages.dev
 ```
+```
+powerschools-sis.pages.dev
+```
+```
+pima-admin.pages.dev
+```
+```
+1yxv18x202eg22-38cg.9882136.xyz
+```
 
 <sub>Over 96% of our games work on alt domains, but there are a few, such as buckshot roulette, that _may_ not work. Some official alt domains, such as learningminds.tech, and some embedding domains such as Google Sites, do not experience this issue.</sub>
 
