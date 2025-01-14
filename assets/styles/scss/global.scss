@@ -68,7 +68,7 @@ body {
     filter: drop-shadow(0 0 50px $accent-dark);
     cursor: pointer;
     transition-duration: 0.5s;
-    width: 30vw;
+    width: 25vw;
     margin: 0 auto;
 }
 
@@ -163,4 +163,18 @@ iframe {
     top: 0;
     height: 100vh;
     z-index: 99;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+}
+
+#uv-address {
+    width: 25vw;
+height: 10vh;
 }

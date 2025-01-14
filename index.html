@@ -11,6 +11,9 @@
         <link rel="manifest" href="manifest.json">
     </head>
     <body>
+        <div id="particles-js"></div>
+
+        <script src="/particles.min.js"></script>
         <span id="corner-menu"><i id="hamburger-menu" class="fa-2x fa-solid fa-navicon" onclick="toggleMenu()"></i></span>
         <iframe id="navbar" src="assets/menu.html"></iframe>
         <img src="assets/images/Title.png" class="logo">
@@ -21,13 +24,14 @@
         
         <br>
         <div class="playButtonsContainer">
-            <div class="playButtons" onclick="window.location.href = 'games/select.html'">Play<br><i class="fa-1x fa-solid fa-gamepad"></i></div>
-            <div class="playButtons" onclick="window.location.href = 'watch/index.html'">Watch<br><i class="fa-1x fa-solid fa-play"></i></div>
+            <div class="playButtons" onclick="redirect('games/select.html')">Play<br><i class="fa-1x fa-solid fa-gamepad"></i></div>
+            <div class="playButtons" onclick="redirect('watch/select.html')">Watch<br><i class="fa-1x fa-solid fa-play"></i></div>
         </div>
             <br>
             <div class="playButtonsContainer">
             <div class="smallerPlayButtons" onclick="openSVG()">Open in data link (Not all games work, undetectable, reload the after clicking to play)</div>
             <div class="smallerPlayButtons" onclick="openAboutBlank()">Open in about:blank (All games work, semi-undetectable)</div>
+            <div class="smallerPlayButtons" onclick="launchBlob()">Open in blob (All games work, semi-undetectable)</div>
         </div>
 
         <script src="https://cdn.logwork.com/widget/countdown.js"></script>
@@ -76,25 +80,6 @@
 </section>
         <script src="assets/js/global.js"></script>
         <script src="assets/js/index.js"></script>
-        <script src="assets/vanta/three.r134.min.js"></script>
-<script src="assets/vanta/vanta.net.min.js"></script>
-<script>
-VANTA.NET({
-  el: "body",
-  mouseControls: false,
-  touchControls: false,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  color: "#4311a5",
-  backgroundColor: "#252025",
-  points: 20.00,
-  maxDistance: 29.00,
-  spacing: 20.00,
-  showDots: false
-})
-</script>
+        
     </body>
 </html>

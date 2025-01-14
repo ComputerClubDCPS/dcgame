@@ -36,7 +36,6 @@ const updateHeight = () => {
         document.documentElement.scrollHeight
     );
     seasonEpisodeExplorer.style.height = `${fullPageHeight}px`;
-   console.log("Updated height" + fullPageHeight);
 };
 
 setInterval(updateHeight, 500);
