@@ -33,14 +33,14 @@ document.addEventListener("DOMContentLoaded", async function (e) {
         document.getElementById("navbar").style.display = "none";
         let visitorCount = 0;
 
-        fetch('http://rhenryw.pythonanywhere.com')
+        fetch('https://rhenryw.pythonanywhere.com')
           .then(response => response.text())
           .then(data => {
             visitorCount = parseInt(data, 10); // Parse the number from the response
             console.log('Number:', visitorCount);
             
             // Update the page content here
-            document.getElementById("visitorCount").textContent = "Visitor Count: " + (visitorCount + 3100); //3100 is the number of visitors before the counter was added
+            document.getElementById("visitorCount").textContent = "Visitor Count: " + (visitorCount + 31282); //31282 is the number of visitors before the counter was added
           })
           .catch(error => console.error('Error fetching the number:', error));
         
