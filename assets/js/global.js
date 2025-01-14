@@ -1,4 +1,3 @@
-
 // Function to fetch the JSON file
 async function fetchFiles() {
     try {
@@ -14,7 +13,10 @@ async function fetchFiles() {
 
 // Function to capitalize game names
 function toTitleCase(str) {
-    return str.replace(/\b\w+/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+    return str.replace(
+        /\b\w+/g,
+        (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+    );
 }
 
 // Function to create a game box
@@ -46,9 +48,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 */
 
-
-
-
 function toggleMenu() {
     if (document.getElementById("navbar").style.display == "none") {
         document.getElementById("navbar").style.display = "unset";
@@ -57,12 +56,18 @@ function toggleMenu() {
     }
 }
 
-function redirect(link){
-    if (window.top.location.href !== "about:blank"){
-      window.top.location.href = link;
+function redirect(link) {
+    if (window.top.location.href == "about:blank" || window.top.location.href.startsWith("blob:")) {
+        if (window.top == window.parent) {
+            window.location.href = link;
+        } else {
+            window.parent.location.href = link;
+        }
     } else {
-      window.parent.location.href = link;
+        window.parent.location.href = link;
     }
-  }
+}
 
-
+particlesJS.load('particles-js', '/particles.json', function() {
+    console.log('Particles.js config loaded');
+});

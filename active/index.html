@@ -6,7 +6,8 @@
       <link rel="stylesheet" href="../../assets/styles/css/global.min.css">
       <link rel="stylesheet" href="../assets/font-awesome/css/all.css">
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-      <link rel="stylesheet" href="index.css">
+      <!--<link rel="stylesheet" href="index.css">-->
+      <link rel="stylesheet" href="/styles/css/global.min.css">
       <link rel="icon" type="image/x-icon" href="logo.png">
       
       <link rel="shortcut icon" type="image/jpg" href="~/favicon.ico"/>
@@ -34,10 +35,12 @@
         </style>
    </head>
    <body>
+      <div id="particles-js"></div>
+
+        <script src="/particles.min.js"></script>
       <span id="corner-menu"><i id="hamburger-menu" class="fa-2x fa-solid fa-navicon" onclick="toggleMenu()"></i></span>
       <iframe id="navbar" src="assets/menu.html"></iframe>
       
-      <canvas id="canvas"></canvas>
       <div id="header">
          <img src="Title.png" alt="Logo" id="bigTitle">
       </div>
@@ -68,15 +71,12 @@
           </div>
         
       </div>
-      <script src="stars.js"></script>
       <script src="uv/uv.bundle.js" charset="UTF-8" defer></script>
       <script src="uv/uv.config.js" charset="UTF-8" defer></script>
       <script src="register-sw.js" charset="UTF-8" defer></script>
       <script src="search.js" charset="UTF-8" defer></script>
       <script src="index.js" charset="UTF-8" defer></script>
-      <script src="assets/js/global.js"></script>
-      <script src="../assets/js/index.js"></script>
-      <script src="../assets/vanta/three.r134.min.js"></script>
+      <script src="/assets/js/global.js"></script>
 
       <div id="footer">
          <footer><a href="privacy-policy.html">Privacy Policy</a> - By Using LupineVault You Agree To Our <a href="tos.html">Terms of Service</a> - Thanks To <a href="https://screen.studio/">Screen Studio</a> For Their Support</footer>
