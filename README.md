@@ -35,6 +35,9 @@ lupinevault-alt.onrender.com
 ```
 edgenuity.global.ssl.fastly.net
 ```
+```
+blooket.global.ssl.fastly.net
+```
 ___Embeds:___
 ```
 sites.google.com/view/lupinevault/home
