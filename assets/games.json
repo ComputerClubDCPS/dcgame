@@ -2415,6 +2415,22 @@
       ""
     ]
   },
+    {
+    "name": "pdftris",
+    "sourceRequired": false,
+    "creator": "",
+    "description": "",
+    "howToPlay": "",
+    "dateAdded": {
+      "month": 1,
+      "day": 15,
+      "year": 2025
+    },
+    "categories": [
+      "",
+      ""
+    ]
+  },
   {
     "name": "getaway-shootout",
     "sourceRequired": false,
