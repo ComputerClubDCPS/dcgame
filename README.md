@@ -38,6 +38,9 @@ edgenuity.global.ssl.fastly.net
 ```
 blooket.global.ssl.fastly.net
 ```
+```
+math4free.global.ssl.fastly.net
+```
 ___Embeds:___
 ```
 sites.google.com/view/lupinevault/home
@@ -57,6 +60,9 @@ powerschools-sis.pages.dev
 ```
 ```
 pima-admin.pages.dev
+```
+```
+big-ideas-math.global.ssl.fastly.net
 ```
 ```
 1yxv18x202eg22-38cg.9882136.xyz
