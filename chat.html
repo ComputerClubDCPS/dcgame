@@ -1,35 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Chat - LupineVault</title>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="52bfea34-46bb-49d1-976f-a5252508ddef"></script>
-        <link rel="stylesheet" href="assets/styles/css/global.min.css">
-        <meta name="google-adsense-account" content="ca-pub-1772815021916812">
-        
-        <link rel="stylesheet" href="../assets/font-awesome/css/all.css">
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-    }
-    widgetbot {
-      position: absolute;
-      width: 100%;
-      height: 90vh;
-      bottom: 0;
-      left: 0;
-      top: 10vh;
-    }
-  </style>
+  <title>Chat - LupineVault</title>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="52bfea34-46bb-49d1-976f-a5252508ddef"></script>
+  <meta name="google-adsense-account" content="ca-pub-1772815021916812">
+  <link rel="stylesheet" href="assets/font-awesome/css/all.css">
+  <link rel="stylesheet" href="assets/styles/main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <span id="corner-menu"><i id="hamburger-menu" class="fa-2x fa-solid fa-navicon" onclick="toggleMenu()"></i></span>
-        <iframe id="navbar" src="assets/menu.html"></iframe>
-  <widgetbot
-    server="1298094096858218516"
-    channel="1309304281320656977"
-  ></widgetbot>
-  
+<body class="bg-gray-900 min-h-screen">
+<div class="text-gray-50 min-h-screen grid grid-cols-[auto_1fr]">
+  <div class="sidebar w-56 p-3 sticky top-0 max-h-screen p-3 overflow-hidden bg-gray-900 border-r border-gray-700 text-nowrap transition-all transition-duration close">
+    <div class="flex flex-col gap-10">
+      <div class="heading flex h-32 justify-between items-center">
+        <a class="logo text-3xl font-bold p-5" href="index.html">
+          Lupine<br>
+          Vault
+        </a>
+        <button class="toggle-button text-gray-400 hover:text-gray-100 hover:bg-gray-800 rounded p-3">
+          <span class="fa fa-bars"></span>
+        </button>
+      </div>
+      <nav>
+        <ul class="list-style-none">
+          <li>
+            <a class="flex gap-5 p-3 items-center text-lg text-gray-400 rounded hover:bg-gray-800" href="index.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-home-lg-alt"></span>
+              </span>
+              Home
+            </a>
+          </li>
+          <li>
+            <a class="flex gap-5 p-3 items-center text-lg text-gray-400 rounded hover:text-gray-100 hover:bg-gray-800" href="games/select.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-gamepad"></span>
+              </span>
+              Games
+            </a>
+          </li>
+          <li>
+            <a class="flex gap-5 p-3 items-center text-lg text-gray-400 rounded hover:text-gray-100 hover:bg-gray-800" href="watch/index.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-tv"></span>
+              </span>
+              Watch
+            </a>
+          </li>
+          <li>
+            <a class="flex gap-5 p-3 items-center text-lg text-fuchsia-300 rounded hover:text-gray-100 hover:bg-gray-800" href="chat.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-comments"></span>
+              </span>
+              Chat
+            </a>
+          </li>
+          <li>
+            <a class="flex gap-5 p-3 items-center text-lg text-gray-400 rounded hover:text-gray-100 hover:bg-gray-800" href="proxy.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-sitemap"></span>
+              </span>
+              Proxy
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="app-content flex-1 p-5">
+    <widgetbot
+     class="w-full h-full"
+     server="1298094096858218516"
+     channel="1309304281320656977"
+    ></widgetbot>
+  </div>
+</div>
   <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
   <script src="assets/js/global.js"></script>
 </body>

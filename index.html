@@ -1,71 +1,209 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>LupineVault</title>
-        <link rel="stylesheet" href="assets/styles/css/global.min.css">
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="52bfea34-46bb-49d1-976f-a5252508ddef"></script>
-        <meta name="google-adsense-account" content="ca-pub-1772815021916812">
-        <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
-        <link rel="stylesheet" href="assets/font-awesome/css/all.css">
-        <link rel="manifest" href="manifest.json">
-    </head>
-    <body>
-        <span id="corner-menu"><i id="hamburger-menu" class="fa-2x fa-solid fa-navicon" onclick="toggleMenu()"></i></span>
-        <iframe id="navbar" src="assets/menu.html"></iframe>
-        <img src="assets/images/Title.png" class="logo">
-        <h2 id="heading">Loading... Please Wait</h2>
-        <p id="flavorText"></p>
-        <br>
-        <script src="https://cdn.logwork.com/widget/countdown.js"></script>
-<a href="https://logwork.com/countdown-timer" class="countdown-timer" data-timezone="America/Phoenix" data-textcolor="#5d19ec" data-date="2025-02-01 12:00" data-background="#7b41f0" data-digitscolor="#f7f7f7" data-unitscolor="#9b86d1">Time Until New Site!!</a>
-        <br>
-        <div class="playButtonsContainer">
-            <div class="playButtons" onclick="window.location.href = 'games/select.html'">Play<br><i class="fa-1x fa-solid fa-gamepad"></i></div>
-            <div class="playButtons" onclick="window.location.href = 'watch/index.html'">Watch<br><i class="fa-1x fa-solid fa-play"></i></div>
+<head>
+  <meta charset="utf-8">
+  <title>LupineVault</title>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="52bfea34-46bb-49d1-976f-a5252508ddef"></script>
+  <meta name="google-adsense-account" content="ca-pub-1772815021916812">
+  <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/font-awesome/css/all.css">
+  <link rel="stylesheet" href="assets/styles/main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900">
+<div class="text-gray-50 grid grid-cols-[auto_1fr]">
+  <div class="sidebar w-56 max-h-screen p-3 sticky top-0 overflow-hidden bg-gray-900 border-r border-gray-700 text-nowrap transition-all ease-in-out duration-300">
+    <div class="flex flex-col gap-10">
+      <div class="heading flex h-32 justify-between items-center">
+        <a class="logo text-3xl font-bold p-5" href="index.html">
+          Lupine<br>
+          Vault
+        </a>
+        <button class="toggle-button text-gray-400 hover:text-gray-100 hover:bg-gray-800 rounded p-3">
+          <span class="fa fa-bars"></span>
+        </button>
+      </div>
+      <nav>
+        <ul class="list-style-none">
+          <li>
+            <a class="flex gap-5 p-3 items-center text-lg text-fuchsia-300 rounded hover:bg-gray-800" href="index.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-home-lg-alt"></span>
+              </span>
+              Home
+            </a>
+          </li>
+          <li>
+            <a class="flex gap-5 p-3 items-center text-lg text-gray-400 rounded hover:text-gray-100 hover:bg-gray-800" href="games/select.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-gamepad"></span>
+              </span>
+              Games
+            </a>
+          </li>
+          <li>
+            <a class="flex gap-5 p-3 items-center text-lg text-gray-400 rounded hover:text-gray-100 hover:bg-gray-800" href="watch/index.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-tv"></span>
+              </span>
+              Watch
+            </a>
+          </li>
+          <li>
+            <a class="flex gap-5 p-3 items-center text-lg text-gray-400 rounded hover:text-gray-100 hover:bg-gray-800" href="chat.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-comments"></span>
+              </span>
+              Chat
+            </a>
+          </li>
+          <li>
+            <a class="flex gap-5 p-3 items-center text-lg text-gray-400 rounded hover:text-gray-100 hover:bg-gray-800" href="proxy.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-sitemap"></span>
+              </span>
+              Proxy
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="app-content flex-1 p-5">
+    <div class="flex justify-end items-center gap-5">
+      <button class="relative rounded-xl border p-2 text-sm" onclick="openSVG()">
+        <span class="absolute hidden">(Not all games work, undetectable, reload the after clicking to play)</span>
+        <span class="fa fa-regular fa-copy"></span>
+        Copy in data link
+      </button>
+      <button class="relative rounded-xl border p-2 text-sm" onclick="openAboutBlank()">
+        <span class="absolute hidden">(All games work, semi-undetectable)</span>
+        <span class="fa fa-regular fa-external-link-alt"></span>
+        Open in about:blank
+      </button>
+      <a href="settings.html">
+        <span class="fa fa-gears"></span>
+      </a>
+    </div>
+    <h2 id="heading" class="text-center text-3xl m-10">Loading... Please Wait</h2>
+    <div class="flex gap-5">
+      <div id="featuredGame" class="flex-1 aspect-video  bg-gray-600 rounded-xl relative">
+        <div class="flex w-full h-full items-start p-5 justify-between">
+          <div class="h-full flex flex-col gap-5">
+            <h3 class="text-4xl font-black">Featured<br>Game</h3>
+          </div>
+          <div class="h-full flex flex-col justify-end">
+            <a href="games/select.html" class="flex items-center justify-between gap-5 rounded-3xl bg-purple-600 py-2 px-5 font-bold">
+              <span class="fa fa-gamepad text-3xl"></span>
+              Play Games
+            </a>
+          </div>
         </div>
-            <br>
-            <div class="playButtonsContainer">
-            <div class="smallerPlayButtons" onclick="openSVG()">Open in data link (Not all games work, undetectable, reload the after clicking to play)</div>
-            <div class="smallerPlayButtons" onclick="openAboutBlank()">Open in about:blank (All games work, semi-undetectable)</div>
+
+      </div>
+      <div  id="featuredMovie" class="flex-1 aspect-video bg-gray-600 rounded-xl">
+        <div class="flex w-full h-full items-start p-5 justify-between">
+          <div class="h-full flex flex-col gap-5">
+            <h3 class="text-4xl font-black">Featured<br>Show</h3>
+          </div>
+          <div class="h-full flex flex-col justify-end">
+            <a href="games/select.html" class="flex items-center justify-between gap-5 rounded-3xl bg-purple-600 py-2 px-5 font-bold">
+              <span class="fa fa-tv text-2xl"></span>
+              Watch movies
+            </a>
+          </div>
         </div>
-        
-        <br>
-        <section id="infoSection">
-        <br>
-        <h2 id="about">About</h2>
-        <p>LupineVault was created by <a href="https://github.com/tf7software">tf7software</a> (Backend) and <a href="https://github.com/InfinityLoop1">InfinityLoop</a> (Frontend)</p>
-        <p>LupineVault was inspired by InfinityGamer, an old game site by InfinityLoop</p>
+      </div>
+    </div>
 
-        <br>
+    <div id="games-carousel" class="my-10">
+      <h3 class="text-4xl mb-5">Featured Games</h3>
+      <div class="w-full overflow-hidden relative">
+        <div class="carousel flex transition-transform duration-500"></div>
 
-        <br>
+        <button class="prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white rounded-full w-10 h-10 flex items-center justify-center">
+          &larr;
+        </button>
+        <button class="next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white rounded-full w-10 h-10 flex items-center justify-center">
+          &rarr;
+        </button>
+      </div>
+    </div>
 
-        <h3>Become a Coyote Crusader!</h3>
-        <p>Download <a href="assets/images/lv-wallpaper.png" download="SuperAwesomeLupineVault-WP.png">THIS</a> wallpaper, put it on a public computer (library, school, etc.) and add LupineVault to desktop and put it in the silver box. Then take a picture and send it to <a href="mailto:rhw@lupinevault.com">rhw@lupinevault.com</a> to get a prize! Don't know how? <a href="assets/vids/CoyoteCrusadersDemoVid2025.mp4">Here's a demo video!</a></p>
+    <div id="movies-carousel" class="my-10">
+      <h3 class="text-4xl mb-5">Featured Movies</h3>
+      <div class="w-full overflow-hidden relative">
+        <div class="carousel flex transition-transform duration-500"></div>
 
-        <h2>Official Minecraft Servers</h2>
+        <button class="prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white rounded-full w-10 h-10 flex items-center justify-center">
+          &larr;
+        </button>
+        <button class="next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white rounded-full w-10 h-10 flex items-center justify-center">
+          &rarr;
+        </button>
+      </div>
+    </div>
 
-        <p>Java (PC, Mac): 79.72.59.54:6969</p>
-        <p>Bedrock (Console, Mobile, PC): 79.72.59.54:19133</p>
-        <p>NOTE: The LupineVault MC Server uses Geyser, enabling both Java and Bedrock users to play together.</p>
-
-        <br>
-
-        <!--<h2>Join <a href="https://www.reddit.com/r/LupineVault/">r/LupineVault!</a></h2>-->
-
-        <h2>Get Involved</h2>
-        <p>We encourage users to help us grow this collection! If you have games to contribute or see updates that need to be made, feel free to reach out, submit directly on our <a href="https://github.com/LupineVault/LupineVault/issues/new?assignees=InfinityLoop1%2C+tf7software&labels=enhancement%2C+New+Game&projects=&template=game-addition.md&title=Game+Addition+%5BGame+Title%5D">GitHub page</a>, join our <a href="https://discord.gg/Ex2nZUWuHF">Discord</a>, or sumbit a request <a href="request-game.html">HERE</a>. Every contribution helps us keep the archive fun and fresh for everyone!</p>
+<!--    <aside class="config fixed top-0 right-0 w-[300px] h-full bg-gray-900">-->
+<!--      <div class="playButtonsContainer">-->
+<!--        <div class="smallerPlayButtons" onclick="openSVG()">Open in data link (Not all games work, undetectable, reload the after clicking to play)-->
+<!--        </div>-->
+<!--        <div class="smallerPlayButtons" onclick="openAboutBlank()">Open in about:blank (All games work, semi-undetectable)</div>-->
+<!--        <p>InfinityGamer save recovery: <a href="recover-from-infinitygamer.html">Click here</a></p>-->
+<!--      </div>-->
+<!--    </aside>-->
 
 
 
-        <p>InfinityGamer save recovery: <a href="recover-from-infinitygamer.html">Click here</a></p>
-          <p>Page Views</p>
-          <iframe src="http://rhenryw.pythonanywhere.com/" width="100px" height="50px"></iframe>
+<!--    <p id="flavorText"></p>-->
+<!--    <br>-->
+    <section id="infoSection">
+      <br>
+      <h2 id="about">About</h2>
+      <p>LupineVault was created by <a href="https://github.com/tf7software">tf7software</a> (Backend) and <a href="https://github.com/InfinityLoop1">InfinityLoop</a>
+        (Frontend)</p>
+      <p>LupineVault was inspired by InfinityGamer, an old game site by InfinityLoop</p>
+
+      <br>
+
+      <br>
+
+      <h3>Become a Coyote Crusader!</h3>
+      <p>Download <a href="assets/images/lv-wallpaper.png" download="SuperAwesomeLupineVault-WP.png">THIS</a> wallpaper, put it on a public computer
+        (library, school, etc.) and add LupineVault to desktop and put it in the silver box. Then take a picture and send it to <a
+         href="mailto:rhw@lupinevault.com">rhw@lupinevault.com</a> to get a prize! Don't know how? <a
+         href="assets/vids/CoyoteCrusadersDemoVid2025.mp4">Here's a demo video!</a></p>
+
+      <h2>Official Minecraft Servers</h2>
+
+      <p>Java (PC, Mac): 79.72.59.54:6969</p>
+      <p>Bedrock (Console, Mobile, PC): 79.72.59.54:19133</p>
+      <p>NOTE: The LupineVault MC Server uses Geyser, enabling both Java and Bedrock users to play together.</p>
+
+      <br>
+
+      <h2>Get Involved</h2>
+      <p>We encourage users to help us grow this collection! If you have games to contribute or see updates that need to be made, feel free to reach
+        out, submit directly on our <a
+         href="https://github.com/LupineVault/LupineVault/issues/new?assignees=InfinityLoop1%2C+tf7software&labels=enhancement%2C+New+Game&projects=&template=game-addition.md&title=Game+Addition+%5BGame+Title%5D">GitHub
+          page</a>, join our <a href="https://discord.gg/Ex2nZUWuHF">Discord</a>, or sumbit a request <a href="request-game.html">HERE</a>. Every
+        contribution helps us keep the archive fun and fresh for everyone!</p>
+
+      <a href='http://www.freevisitorcounters.com'>freevisitorcounterss Homepage</a>
+    </section>
+  </div>
+</div>
+<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=d222fd70cd154863dc5f771e95646a1619a1d358'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1262052/t/1"></script>
 
 <footer><a href="privacy-policy.html">Privacy Policy</a> - By Using LupineVault You Agree To Our <a href="tos.html">Terms of Service</a></footer>
-</section>
-        <script src="assets/js/global.js"></script>
-        <script src="assets/js/index.js"></script>
-    </body>
+
+<script src="assets/js/utils/common.utils.js"></script>
+<script src="assets/js/components/Carousel.js"></script>
+<script src="assets/js/services/GameService.js"></script>
+<script src="assets/js/services/MoviesService.js"></script>
+<script src="assets/js/global.js"></script>
+<script src="assets/js/index.js"></script>
+</body>
 </html>

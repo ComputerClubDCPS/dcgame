@@ -3,14 +3,19 @@ let gameContainer = document.getElementById("gameContainer");
 function createGameBox(gameName) {
     const gameImg = `../assets/images/games/${gameName}.png`;
     const gameLink = `play.html?g=${gameName}`;
-    const gameBox = document.createElement("div");
-    gameBox.classList.add("gameBox");
-    gameBox.style.backgroundImage = `url('${gameImg}')`;
+    const template = `
 
-    const gameText = document.createElement("span");
-    gameText.textContent = toTitleCase(gameName.replace(/-/g, " "));
+      <div class="group gameBox flex aspect-square bg-cover rounded-xl justify-center items-end relative overflow-hidden hover:border cursor-pointer" style="background-image: url('${gameImg}')">
+        <div class="group-hover:opacity-100  opacity-0 relative w-full h-full flex justify-center items-center transition-opacity bg-gray-900/80">
+            <span class="text-center relative z-10">${toTitleCase(gameName.replace(/-/g, " "))}</span>
+        </div>
+      </div>
+    `
 
-    gameBox.appendChild(gameText);
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = template;
+
+    const gameBox = tempDiv.firstElementChild;
     gameBox.addEventListener("click", function () {
         window.location.href = gameLink;
     });
@@ -29,20 +34,13 @@ function filterGames() {
 }
 
 document.addEventListener("DOMContentLoaded", async function (e) {
-    // Fetch games.json and simulate getting the "games/files" directory
-    let gameNames = await fetchFiles(""); // Empty string for full data
-
-    // Extract 'name' properties from the fetched JSON data
-    gameNames = gameNames.map((obj) => obj.name);
-
-    // Sort and create game boxes
-    gameNames.sort();
+    const gameList = await GameService.loadGames();
+    const gameNames = GameService.getGameSortedNames(gameList);
 
     gameNames.forEach(function (gameName) {
         gameContainer.appendChild(createGameBox(gameName));
     });
 
-    // Update the game count
     document.getElementById("gameCount").textContent =
         "There are currently " + gameNames.length + " games in the LupineVault.";
 

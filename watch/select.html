@@ -10,9 +10,70 @@
     <link rel="stylesheet" href="../assets/font-awesome/css/all.css">
     <meta name="referrer" content="origin" />
     <link rel="stylesheet" href="../assets/styles/css/watch.min.css">
+    <link rel="stylesheet" href="../assets/styles/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="52bfea34-46bb-49d1-976f-a5252508ddef"></script>
 </head>
-<body>
+<body class="bg-gray-900 min-h-screen">
+<div class="text-gray-50 min-h-screen grid grid-cols-[auto_1fr]">
+    <div class="sidebar w-56 p-3 sticky top-0 max-h-screen p-3 overflow-hidden bg-gray-900 border-r border-gray-700 text-nowrap transition-all ease-in-out duration-300">
+        <div class="flex flex-col gap-10">
+            <div class="heading flex h-32 justify-between items-center">
+                <a class="logo text-3xl font-bold p-5" href="../index.html">
+                    Lupine<br>
+                    Vault
+                </a>
+                <button class="toggle-button text-gray-400 hover:text-gray-100 hover:bg-gray-800 rounded p-3">
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div>
+            <nav>
+                <ul class="list-style-none">
+                    <li>
+                        <a class="flex gap-5 p-3 items-center text-lg text-gray-400 rounded hover:bg-gray-800" href="../index.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-home-lg-alt"></span>
+              </span>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex gap-5 p-3 items-center text-lg text-gray-400 rounded hover:text-gray-100 hover:bg-gray-800" href="../games/select.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-gamepad"></span>
+              </span>
+                            Games
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex gap-5 p-3 items-center text-lg text-fuchsia-300 rounded hover:text-gray-100 hover:bg-gray-800" href="../watch/index.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-tv"></span>
+              </span>
+                            Watch
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex gap-5 p-3 items-center text-lg text-gray-400 rounded hover:text-gray-100 hover:bg-gray-800" href="../chat.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-comments"></span>
+              </span>
+                            Chat
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex gap-5 p-3 items-center text-lg text-gray-400 rounded hover:text-gray-100 hover:bg-gray-800" href="../proxy.html">
+              <span class="flex items-center justify-center w-8 h-8">
+                <span class="fa fa-regular fa-sitemap"></span>
+              </span>
+                            Proxy
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="app-content flex-1 p-5">
     <div id="season-episode-explorer">
         <div id="season-episode-container">
             <div id="season-episode-header">
@@ -23,8 +84,6 @@
               <div id="episodes-container"></div> <!-- Episodes will be populated below the season -->
          </div>
       </div>
-      <span id="corner-menu"><i id="hamburger-menu" class="fa-2x fa-solid fa-navicon" onclick="toggleMenu()"></i></span>
-      <iframe id="navbar" src="../assets/menu.html"></iframe>
     <img src="../assets/images/playLogo.png" class="playLogo">
     <a href="info.html">Info</a>
     <div id="tabs">
@@ -51,6 +110,8 @@
             <iframe id="movie-iframe" scrolling="no" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="origin" allowfullscreen></iframe>
         </div>
     </div>
+    </div>
+</div>
 
     <script src="../assets/js/watchSelect.js"></script>
     <script src="../assets/js/global.js"></script>
