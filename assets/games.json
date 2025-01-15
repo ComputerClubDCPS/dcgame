@@ -2556,6 +2556,18 @@
         "categories": ["", ""]
     },
     {
+        "name": "minecraft-1.8.8-x",
+        "creator": "",
+        "description": "",
+        "howToPlay": "",
+        "dateAdded": {
+            "month": 1,
+            "day": 14,
+            "year": 2025
+        },
+        "categories": ["", ""]
+    },
+    {
         "name": "minecraft-1.8.8",
         "creator": "",
         "description": "",
