@@ -8,7 +8,7 @@ A collection of over 400 HTML5 games with cloaking and integrated chat
 
 There are currently ```403``` games in the LupineVault.
 
-[![Join Our Discord](https://img.shields.io/badge/Join%20Our-Discord-purple)](https://discord.gg/Ex2nZUWuHF) [![maintenance-status](https://img.shields.io/badge/maintenance-actively--developed-brightgreen.svg)](https://github.com/LupineVault/LupineVault/commits/main/)
+[![Join Our Discord](https://img.shields.io/badge/Join%20Our-Discord-purple)](https://discord.gg/Ex2nZUWuHF) [![maintenance-status](https://img.shields.io/badge/maintenance-actively--developed-brightgreen.svg)](https://gitlab.com/tf7software/LupineVault/-/commits/main)
 [![Join Our Reddit](https://img.shields.io/badge/Join%20Our-Reddit-orange)](https://www.reddit.com/r/LupineVault/)
 
 
@@ -104,7 +104,7 @@ More to come...
 
 ### How to get contributions in the vault:
 
-  Submit a request [HERE](https://lupinevault.com/request-game) for the fastest response time
+  Submit a request [HERE](https://lupinevault.com/request-game.html) for the fastest response time
 
   _or_
 
@@ -113,10 +113,6 @@ More to come...
   _or_
 
   Contact us using [Discord](https://discord.gg/Ex2nZUWuHF)
-
-  _or_
-
-  Post a reqest on [r/LupineVault](https://www.reddit.com/r/LupineVault/) with the flair "new game"
 
 Can either be a ZIP file _or_ GitHub repo, __No download links besides GitHub__
 
@@ -151,4 +147,4 @@ Inspired by InfinityLoop's [InfinityGamer](https://github.com/InfinityGamer-Game
 Games from [NZP](https://github.com/nzp-team), [Eaglercraft](https://eaglercraft.com/), and [HTML-Games-V2](https://github.com/tw31122007/HTML-Games-V2)
 
 # Disclamer:
-All games on LupineVault have been acquired from GitHub and/or __Legal Sources__, if you have a game on LupineVault that you want to be taken down, please contact using an ISSUE
+All games on LupineVault have been acquired from GitHub/GitLab and/or __Legal Sources__, if you have a game on LupineVault that you want to be taken down, please contact using an ISSUE
