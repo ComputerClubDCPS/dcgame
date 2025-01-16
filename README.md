@@ -2,7 +2,7 @@
   
 # ![LupineVault Title](assets/images/tinyTitle.png)
 
-A collection of almost 400 HTML5 games with cloaking and integrated chat
+A collection of over 400 HTML5 games with cloaking and integrated chat
 
 </div>
 
