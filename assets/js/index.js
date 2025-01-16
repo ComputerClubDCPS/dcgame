@@ -31,19 +31,7 @@ document.addEventListener("DOMContentLoaded", async function (e) {
         document.getElementById("flavorText").innerHTML = randomFlavorText;
         
         document.getElementById("navbar").style.display = "none";
-        let visitorCount = 0;
-
-        fetch('https://rhenryw.pythonanywhere.com')
-          .then(response => response.text())
-          .then(data => {
-            visitorCount = parseInt(data, 10); // Parse the number from the response
-            console.log('Number:', visitorCount);
-            
-            // Update the page content here
-            document.getElementById("visitorCount").textContent = "Visitor Count: " + (visitorCount + 38940); //31282 is the number of visitors before the counter was added
-          })
-          .catch(error => console.error('Error fetching the number:', error));
-        
+ 
 });
 
 function openSVG() {
