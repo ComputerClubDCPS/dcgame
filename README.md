@@ -21,6 +21,8 @@ data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiID8+Cj
 
 # Alt Domains:
 
+### New! Use [bit.ly/lupinev](https://bit.ly/lupinev) to view alt domains using GDocs, so it's unblocked *even* on a school chromebook!
+
 ___Official:___
 ```
 learningminds.tech
