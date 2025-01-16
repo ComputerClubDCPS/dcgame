@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async function (e) {
             console.log('Number:', visitorCount);
             
             // Update the page content here
-            document.getElementById("visitorCount").textContent = "Visitor Count: " + (visitorCount + 31282); //31282 is the number of visitors before the counter was added
+            document.getElementById("visitorCount").textContent = "Visitor Count: " + (visitorCount + 38940); //31282 is the number of visitors before the counter was added
           })
           .catch(error => console.error('Error fetching the number:', error));
         
