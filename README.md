@@ -28,6 +28,9 @@ learningminds.tech
 ```
 moviesand.games
 ```
+```
+0085624.xyz
+```
 ___Unofficial:___
 ```
 lupinevault-alt.onrender.com
