@@ -126,6 +126,10 @@ Can either be a ZIP file _or_ GitHub repo, __No download links besides GitHub__
 - You must include attribution for this repo, tf7software, InfinityLoop, and the LupineVault organization on index.html, with hyperlinks for each
 - You must include the exact, unchanged attribution.txt file, which is currently located in the root of the LupineVault/LupineVault repository: [Link](https://gitlab.com/tf7software/LupineVault/-/raw/main/attribution.txt)
 - You must use the same license as the LupineVault/LupineVault repository [Link](https://gitlab.com/tf7software/LupineVault/-/raw/main/LICENSE)
+- You can also embed LupineVault in an iFrame using [Embeddr](https://embeddr.pages.dev/):
+```
+https://embeddr.pages.dev/embed#https://lupinevault.com/
+```
 
 
 ## Deploy Links
