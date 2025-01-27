@@ -1,88 +1,134 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>LupineVault</title>
-        <link rel="stylesheet" href="assets/styles/css/global.min.css">
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="52bfea34-46bb-49d1-976f-a5252508ddef"></script>
-        <meta name="google-adsense-account" content="ca-pub-1772815021916812">
-        <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
-        <link rel="stylesheet" href="assets/font-awesome/css/all.css">
-        <link rel="manifest" href="manifest.json">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1772815021916812"
-     crossorigin="anonymous"></script>
-       
-    </head>
-    <body>
-        <div id="particles-js"></div>
 
-        <script src="/particles.min.js"></script>
-        <span id="corner-menu"><i id="hamburger-menu" class="fa-2x fa-solid fa-navicon" onclick="toggleMenu()"></i></span>
-        <iframe id="navbar" src="assets/menu.html"></iframe>
-        <img src="assets/images/Title.png" class="logo">
-        <h2 id="heading">Loading... Please Wait</h2>
-        <p id="flavorText"></p>
-        
-        <br>
-        
+<head>
+    <meta charset="utf-8">
+    <title>LupineVault</title>
+    <link rel="stylesheet" href="assets/styles/css/global.min.css">
+    <link rel="stylesheet" href="assets/styles/css/index.min.css">
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="52bfea34-46bb-49d1-976f-a5252508ddef"></script>
+    <meta name="google-adsense-account" content="ca-pub-1772815021916812">
+    <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
+    <link rel="stylesheet" href="assets/font-awesome/css/all.css">
+    <link rel="manifest" href="manifest.json">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1772815021916812"
+        crossorigin="anonymous"></script>
+</head>
+
+<body style="overflow-x: hidden;">
+    <div id="particles-js"></div>
+    <script src="/particles.min.js"></script>
+    <div id="sidebarMenu"></div>
+    <div id="mainContent">
+        <div class="flex-horiz"> <img src="assets/images/Title.png" class="logo">
+            <h3 id="heading">Loading... Please Wait</h3>
+        </div>
+
+
+        <div id="tilesContainer">
+            <div class="tile" id="newsTile">
+                <h2>News</h2>
+                <ul id="newsList">
+                    <li><news-date>2/1/2024</news-date> <news-headline>Complete site redesign!</news-headline> New look
+                        for every page! </li>
+                </ul>
+            </div>
+            <div class="tile" id="featuredGameTile">
+                <h2></h2>
+                <div class="flex-horiz">
+                    <button onclick="window.location.href = 'games/select.html'" style="font-size: 75%;"><i
+                            class="fa-1x fa-solid fa-gamepad"></i> Play another game</button>
+                    <button id="playThisGame"><i class="fa-1x fa-solid fa-gamepad"></i> Play this game</button>
+
+                </div>
+            </div>
+            <div class="tile" id="featuredMovieTVShowTile">
+                <h2></h2>
+                <div class="flex-horiz">
+                    <button onclick="window.location.href = 'watch/select.html'" style="font-size: 75%;"><i
+                            class="fa-1x fa-solid fa-play"></i> Watch another movie or TV show</button>
+                    <button id="playThisGame"><i class="fa-1x fa-solid fa-play"></i> Watch this</button>
+                </div>
+            </div>
+        </div>
+        <div class="flex-horiz">
+            <button id="leftArrow" class="arrow"><i class="fa-1x fa-solid fa-arrow-left"></i></button>
+            <button id="rightArrow" class="arrow"><i class="fa-1x fa-solid fa-arrow-right"></i></button>
+        </div>
+
+
+
+        <br><br>
+        <div class="playButtonsContainer">
+            <div class="playButtons" onclick="redirect('games/select.html')">Play<br><i
+                    class="fa-1x fa-solid fa-gamepad"></i></div>
+            <div class="playButtons" onclick="redirect('watch/select.html')">Watch<br><i
+                    class="fa-1x fa-solid fa-play"></i></div>
+        </div>
         <br>
         <div class="playButtonsContainer">
-            <div class="playButtons" onclick="redirect('games/select.html')">Play<br><i class="fa-1x fa-solid fa-gamepad"></i></div>
-            <div class="playButtons" onclick="redirect('watch/select.html')">Watch<br><i class="fa-1x fa-solid fa-play"></i></div>
+            <div class="smallerPlayButtons" onclick="openSVG()">Open in data link (Not all games work, undetectable,
+                reload the after clicking to play)</div>
+            <div class="smallerPlayButtons" onclick="openAboutBlank()">Open in about:blank (All games work,
+                semi-undetectable)</div>
+            <div class="smallerPlayButtons" onclick="launchBlob()">Open in blob (All games work, semi-undetectable)
+            </div>
         </div>
-            <br>
-            <div class="playButtonsContainer">
-            <div class="smallerPlayButtons" onclick="openSVG()">Open in data link (Not all games work, undetectable, reload the after clicking to play)</div>
-            <div class="smallerPlayButtons" onclick="openAboutBlank()">Open in about:blank (All games work, semi-undetectable)</div>
-            <div class="smallerPlayButtons" onclick="launchBlob()">Open in blob (All games work, semi-undetectable)</div>
-        </div>
-
-        <script src="https://cdn.logwork.com/widget/countdown.js"></script>
-<a href="https://logwork.com/countdown-timer" class="countdown-timer" data-timezone="America/Phoenix" data-textcolor="#5d19ec" data-date="2025-02-01 12:00" data-background="#7b41f0" data-digitscolor="#f7f7f7" data-unitscolor="#9b86d1">Time Until Site Redesign</a>
-        <a href="new-look.html"><h2>Learn More</h2></a><p style="font-size: 8px; margin-top: -20px;">psst... there's a sneak peek of the redesign</p>
-        
-        <br>
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1772815021916812"
+            crossorigin="anonymous"></script>
+        <!-- hor-lv -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1772815021916812"
+            data-ad-slot="1325076021" data-ad-format="auto" data-adtest="on" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
         <section id="infoSection">
-        <br>
-        <h2 id="about">About</h2>
-        <p>LupineVault was created by <a href="https://github.com/tf7software">tf7software</a> (Backend) and <a href="https://github.com/InfinityLoop1">InfinityLoop</a> (Frontend)</p>
-        <p>LupineVault was inspired by InfinityGamer, an old game site by InfinityLoop</p>
+            <br>
+            <h2 id="about">About</h2>
+            <br>
+            <p>Welcome to LupineVault, a collection of games and movies, and a proxy!</p>
+            <p>LupineVault was created by <a href="https://rhw.one">tf7software</a> (Backend) and <a
+                    href="https://github.com/InfinityLoop1">InfinityLoop</a> (Frontend)</p>
+            <p>LupineVault was inspired by InfinityGamer, an old game site by InfinityLoop</p>
 
-        <br>
+            <br>
+            <h3>Become a Coyote Crusader!</h3>
+            <p>Download <a href="assets/images/lv-wallpaper.png" download="SuperAwesomeLupineVault-WP.png">THIS</a>
+                wallpaper, put it on a public computer (library, school, etc.) and add LupineVault to desktop and put it
+                in the silver box. Then take a picture and send it to <a
+                    href="mailto:rhw@lupinevault.com">rhw@lupinevault.com</a> to get a prize! Don't know how? <a
+                    href="assets/vids/CoyoteCrusadersDemoVid2025.mp4">Here's a demo video!</a></p>
 
-        <br>
+            <br>
+            <h2>Official Minecraft Servers</h2>
+            <p>Java (PC, Mac): 79.72.59.54:6969</p>
+            <p>Bedrock (Console, Mobile, PC): 79.72.59.54:19133</p>
+            <p>NOTE: The LupineVault MC Server uses Geyser, enabling both Java and Bedrock users to play together.</p>
 
-        <p>Come visit <a href="https://rhw.one/">tf7software's site</a></p>
+            <br>
 
-        <br>
+            <!--<h3>Join <a href="https://www.reddit.com/r/LupineVault/">r/LupineVault!</a></h2>  caue twentyfour7 got himself kicked off of Reddit :(-->
 
-        <br>
+            <h3>Get Involved</h3>
+            <p>We encourage users to help us grow this collection! If you have games to contribute or see updates that
+                need to be made, feel free to reach out, submit directly on our <a
+                    href="https://github.com/LupineVault/LupineVault/issues/new?assignees=InfinityLoop1%2C+tf7software&labels=enhancement%2C+New+Game&projects=&template=game-addition.md&title=Game+Addition+%5BGame+Title%5D">GitHub
+                    page</a>, join our <a href="https://discord.gg/Ex2nZUWuHF">Discord</a>, or sumbit a request <a
+                    href="request-game.html">HERE</a>. Every contribution helps us keep the archive fun and fresh for
+                everyone!</p>
 
-        <h3>Become a Coyote Crusader!</h3>
-        <p>Download <a href="assets/images/lv-wallpaper.png" download="SuperAwesomeLupineVault-WP.png">THIS</a> wallpaper, put it on a public computer (library, school, etc.) and add LupineVault to desktop and put it in the silver box. Then take a picture and send it to <a href="mailto:rhw@lupinevault.com">rhw@lupinevault.com</a> to get a prize! Don't know how? <a href="assets/vids/CoyoteCrusadersDemoVid2025.mp4">Here's a demo video!</a></p>
+            <p>InfinityGamer save recovery: <a href="recover-from-infinitygamer.html">Click here</a></p>
 
-        <h2>Official Minecraft Servers</h2>
-
-        <p>Java (PC, Mac): 79.72.59.54:6969</p>
-        <p>Bedrock (Console, Mobile, PC): 79.72.59.54:19133</p>
-        <p>NOTE: The LupineVault MC Server uses Geyser, enabling both Java and Bedrock users to play together.</p>
-
-        <br>
-
-        <!--<h2>Join <a href="https://www.reddit.com/r/LupineVault/">r/LupineVault!</a></h2>  caue twentyfour7 got himself kicked off of Reddit :(-->
-
-        <h2>Get Involved</h2>
-        <p>We encourage users to help us grow this collection! If you have games to contribute or see updates that need to be made, feel free to reach out, submit directly on our <a href="https://github.com/LupineVault/LupineVault/issues/new?assignees=InfinityLoop1%2C+tf7software&labels=enhancement%2C+New+Game&projects=&template=game-addition.md&title=Game+Addition+%5BGame+Title%5D">GitHub page</a>, join our <a href="https://discord.gg/Ex2nZUWuHF">Discord</a>, or sumbit a request <a href="request-game.html">HERE</a>. Every contribution helps us keep the archive fun and fresh for everyone!</p>
+        </section>
 
 
+        <footer></footer>
+    </div>
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/index.js"></script>
 
-        <p>InfinityGamer save recovery: <a href="recover-from-infinitygamer.html">Click here</a></p>
+</body>
 
-
-<footer><a href="privacy-policy.html">Privacy Policy</a> - By Using LupineVault You Agree To Our <a href="tos.html">Terms of Service</a> - Thanks To <a href="https://screen.studio/">Screen Studio</a> For Their Support</footer>
-</section>
-        <script src="assets/js/global.js"></script>
-        <script src="assets/js/index.js"></script>
-        
-    </body>
 </html>

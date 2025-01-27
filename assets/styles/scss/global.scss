@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
-$accent: #5e17eb;
-$accent-light: #7c43ec;
-$accent-dark: #4311a5;
+$accent: #5215cd;
+$accent-light: #6a36d2;
+$accent-dark: #370c8e;
+$accent-darker: #25085f;
+$accent-darker-2: #1b0741;
 $text-color: #d5cde4;
 $background-color: #252025;
 
@@ -14,67 +16,7 @@ body {
     padding: 0;
 }
 
-.logo {
-    filter: drop-shadow(0 0 10px $accent);
-    width: 75vw; // Ensures the logo is 75% of the viewport width
-    animation: loglow 2s infinite alternate;
-    top: 10px;
-}
 
-@keyframes loglow {
-    0% {
-        filter: drop-shadow(0 0 10px $accent);
-    }
-    100% {
-        filter: drop-shadow(0 0 25px $accent);
-    }
-}
-.playButtonsContainer {
-    display: flex;
-    gap: 10px;
-}
-
-.playButtons{
-    background: linear-gradient(90deg, #26134d, #281255);
-    color: #eeeeee;
-    font-size: 150%;
-    padding: 50px;
-    text-shadow: 0 0 10px $accent-light, 0 0 20px $accent-light,
-        0 0 30px $accent, 0 0 40px $accent, 0 0 50px $accent, 0 0 60px $accent,
-        0 0 70px $accent;
-    border-radius: 20px;
-    border: none;
-    filter: drop-shadow(0 0 50px $accent-dark);
-    cursor: pointer;
-    transition-duration: 0.5s;
-    width: 40vw;
-    margin: 0 auto;
-}
-
-.playButtons:hover {
-    transform: scale(1.05);
-}
-
-.smallerPlayButtons{
-    background: linear-gradient(90deg, #26134d, #281255);
-    color: #eeeeee;
-    font-size: 125%;
-    padding: 50px;
-    text-shadow: 0 0 10px $accent-light, 0 0 20px $accent-light,
-        0 0 30px $accent, 0 0 40px $accent, 0 0 50px $accent, 0 0 60px $accent,
-        0 0 70px $accent;
-    border-radius: 20px;
-    border: none;
-    filter: drop-shadow(0 0 50px $accent-dark);
-    cursor: pointer;
-    transition-duration: 0.5s;
-    width: 25vw;
-    margin: 0 auto;
-}
-
-.smallerPlayButtons:hover {
-    transform: scale(1.05);
-}
 
 a {
     color: $text-color;
@@ -98,18 +40,6 @@ input {
     text-align: center;
 }
 
-#corner-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: $accent-dark;
-    padding: 5px 10px;
-    border-radius: 0 0 0 10px;
-    display: flex;
-    gap: 10px;
-    z-index: 100;
-}
-
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -127,7 +57,7 @@ input {
 }
 
 button {
-    background: linear-gradient(90deg, #26134d, #281255);
+    background: $accent-dark   ;
     color: #eeeeee;
     padding: 7.5px;
     filter: drop-shadow(0 0 5px $accent-light);
@@ -137,32 +67,10 @@ button {
     transition-duration: 0.5s;
 }
 
-#infoSection {
-    background-color: rgba($accent-dark, 0.5);
-    margin: none;
-    padding: 10px;
-    margin-top: 120px;
-}
 
-#infoSection h3 {
-    font-weight: 900;
-}
 
 iframe {
     border: none;
-}
-
-#hamburger-menu {
-    cursor: pointer;
-}
-
-#navbar {
-    display: none;
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    z-index: 99;
 }
 
 #particles-js {
@@ -177,4 +85,98 @@ iframe {
 #uv-address {
     width: 25vw;
 height: 10vh;
+}
+
+/* Sidebar Menu */
+#sidebarMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px; /* Define the width of the sidebar */
+    background-color: rgba($accent-darker, 0.75);
+    padding: 10px;
+    z-index: 100;
+    transform: translateX(-160px); /* Start hidden */
+    transition: transform 0.3s ease; /* Smooth slide-in effect */
+    text-align: right;
+
+    li {
+        list-style-type: none;
+        font-size: 200%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        
+    }
+    
+    a:hover {
+        font-weight: 600;
+        text-shadow: 0 0 10px $accent-light;
+
+        i {
+            filter: drop-shadow(0 0 5px $accent-light);
+        }
+    }
+    
+    i {
+        padding-left: 20px;
+    }
+}
+
+#sidebarMenu:hover {
+    transform: translateX(0);
+}
+
+/* Main content */
+#mainContent {
+    transition: margin-left 0.3s ease; /* Smooth adjustment */
+    margin-left: 60px; /* Default margin */
+}
+
+/* Adjust margin when the sidebar is active */
+#sidebarMenu:hover ~ #mainContent {
+    margin-left: 220px; /* Same as the sidebar width */
+}
+
+.flex-horiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.flex-vert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+footer {
+    background-color: rgba($accent-dark, 0.5);
+    width: 100%;
+    margin: none;
+}
+
+#sidebarMenu #smallLogo {
+    opacity: 0;
+    width: 200px;
+    transition: opacity 0.5s, filter 1s;
+}
+
+#sidebarMenu:hover #smallLogo {
+    opacity: 1;
+    filter: drop-shadow(0 0 2.5px $accent-dark) brightness(1.5);
+}
+
+ins {
+    border: 1px solid $accent-light;
 }

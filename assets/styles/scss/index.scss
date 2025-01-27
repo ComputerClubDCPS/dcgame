@@ -1,0 +1,128 @@
+@use "global";
+#tilesContainer {
+    display: flex;
+    width: calc(100vw * 3); /* Account for the looping */
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.tile {
+    flex: 0 0 calc(60vw);
+    height: 300px;
+    margin: 0 10px;
+    background: rgba(global.$accent-dark, 0.5);
+    border: 2px solid global.$text-color;
+    border-radius: 10px;
+    text-align: left;
+    padding-left: 20px;
+
+    h2 {
+        text-shadow:
+    -1px -1px 0 global.$background-color,
+    1px -1px 0 global.$background-color,
+    -1px 1px 0 global.$background-color,
+    1px 1px 0 global.$background-color; 
+    }
+}
+
+.arrow {
+    margin-top: 10px;
+    filter: drop-shadow(0 0 1px global.$accent-light);
+}
+
+#newsList li {
+
+    news-date {
+        font-weight: 200;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    news-headline {
+        font-weight: 600;
+    }
+}
+
+#featuredGameTile, #featuredMovieTVShowTile {
+    display: flex;
+    flex-direction: row;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: end;
+    
+    h2 {
+        flex-grow: 1;
+    }
+    
+    button {
+        align-self: flex-end;
+        margin: 10px;
+        font-size: 150%;
+        filter: none;
+        background: global.$accent-light !important;
+    }
+}
+
+#infoSection {
+    background: linear-gradient(0deg, rgba(global.$accent-dark, 0.5), rgba(global.$accent-dark, 0));
+    margin: none;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#infoSection h3 {
+    font-weight: 900;
+}
+
+
+.playButtonsContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.playButtons{
+    background: linear-gradient(0deg, rgba(global.$accent-dark, 0.5), rgba(global.$accent-dark, 0.25));
+    color: #eeeeee;
+    font-size: 150%;
+    padding: 50px;
+    text-shadow: 0 0 20px global.$accent-light;
+    border-radius: 20px;
+    border: none;
+    filter: drop-shadow(0 0 20px global.$accent-dark);
+    cursor: pointer;
+    transition-duration: 0.5s;
+    width: 40vw;
+    margin: 0 auto;
+}
+
+.playButtons:hover {
+    transform: scale(1.05);
+}
+
+.smallerPlayButtons{
+    background: linear-gradient(0deg, rgba(global.$accent-dark, 0.5), rgba(global.$accent-dark, 0.25));
+    color: #eeeeee;
+    font-size: 125%;
+    padding: 50px;
+    text-shadow: 0 0 20px global.$accent-light;
+    border-radius: 20px;
+    border: none;
+    filter: drop-shadow(0 0 10px global.$accent-dark);
+    cursor: pointer;
+    transition-duration: 0.5s;
+    width: 25vw;
+    margin: 0 auto;
+}
+
+.smallerPlayButtons:hover {
+    transform: scale(1.05);
+}
+
+.logo {
+    filter: drop-shadow(0 0 2.5px global.$accent);
+    width: 25vw;
+    top: 10px;
+}

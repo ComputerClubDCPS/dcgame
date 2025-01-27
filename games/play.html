@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="google-adsense-account" content="ca-pub-1772815021916812">
-<title>Play</title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../assets/styles/css/global.min.css">
-<link rel="stylesheet" href="../assets/styles/css/playGame.min.css">
-<link rel="stylesheet" href="../assets/font-awesome/css/all.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="52bfea34-46bb-49d1-976f-a5252508ddef"></script>
+    <meta charset="utf-8">
+    <meta name="google-adsense-account" content="ca-pub-1772815021916812">
+    <title>Play</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/styles/css/global.min.css">
+    <link rel="stylesheet" href="../assets/styles/css/playGame.min.css">
+    <link rel="stylesheet" href="../assets/font-awesome/css/all.css">
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="52bfea34-46bb-49d1-976f-a5252508ddef"></script>
 </head>
 
 <body>
     <div id="particles-js"></div>
 
-        <script src="/particles.min.js"></script>
-    <iframe id="gameFrame"></iframe>
-    <div id="bottomMenu">
-        <span id="corner-menu"><i id="hamburger-menu" class="fa-2x fa-solid fa-navicon" onclick="toggleMenu()"></i></span>
-        <iframe id="navbar" src="../assets/menu.html"></iframe>
-        <a id="sourceViewLink"><i class="fa-2x fa-solid fa-file"></i></a>
-        <a id="downloadFilesLink"><i class="fa-2x fa-solid fa-download"></i></a>
+    <script src="/particles.min.js"></script>
+    <div id="sidebarMenu"></div>
+    <div id="mainContent">
+
+                <iframe id="gameFrame"></iframe>
+                <div id="bottomMenu">
+                    <a id="sourceViewLink"><i class="fa-2x fa-solid fa-file"></i></a>
+                    <a id="downloadFilesLink"><i class="fa-2x fa-solid fa-download"></i></a>
+                    <i class="fa-2x fa-solid fa-window-maximize" onclick="goFullscreen('gameFrame')"></i>
+                </div>
+
     </div>
 
-    <!-- Off-Screen Visitor Counter -->
-    <iframe srcdoc="
-        <a href='http://www.freevisitorcounters.com'>freevisitorcounterss Homepage</a>
-        <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=d222fd70cd154863dc5f771e95646a1619a1d358'></script>
-        <script type='text/javascript' src='https://www.freevisitorcounters.com/en/home/counter/1262052/t/1'></script>
-    " style="position: absolute; top: -9999px; left: -9999px; width: 0; height: 0; border: none;"></iframe>
 
     <script src="../assets/js/global.js"></script>
     <script src="../assets/js/playGame.js"></script>

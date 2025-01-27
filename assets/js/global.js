@@ -21,7 +21,7 @@ function toTitleCase(str) {
 
 // Function to create a game box
 function createGameBox(gameName) {
-    const gameImg = `../assets/images/games/${gameName}.png`;
+    const gameImg = `../assets/images/games/tile/${gameName}.png`;
     const gameLink = `play.html?g=${gameName}`;
 
     const gameBox = document.createElement("div");
@@ -71,3 +71,17 @@ function redirect(link) {
 particlesJS.load('particles-js', '/particles.json', function() {
     console.log('Particles.js config loaded');
 });
+
+document.getElementById("sidebarMenu").innerHTML = `
+    
+    <li><a onclick="redirect('/')">Home <i class="fa-1x fa-solid fa-home"></i></a></li>
+            <li><a onclick="redirect('/settings.html')">Settings <i class="fa-1x fa-solid fa-gears"></i></a></li>
+            <li><a onclick="redirect('/games/select.html')">Games <i class="fa-1x fa-solid fa-gamepad"></i></a></li>
+            <li><a onclick="redirect('/watch/select.html')">Watch <i class="fa-1x fa-solid fa-play"></i></a></li>
+            <li><a onclick="redirect('/chat.html')">Chat <i class="fa-1x fa-solid fa-comments"></i></a></li>
+            <li><a onclick="redirect('/active/index.html')">Proxy <i class="fa-1x fa-solid fa-unlock"></i></a></li>
+
+            <img src="/assets/images/Title.png" id="smallLogo">
+`;
+
+document.querySelector("footer").innerHTML = `By using LupineVault you agree to our <a href="privacy-policy.html">Privacy Policy</a> and <a href="tos.html">Terms of Service</a> - Thanks to our sponsors <a href="https://screen.studio/">Screen Studio</a> for their support - Thanks to our partners <a href="https://benrogo.net">benrogo.net</a> and <a href="https://starttiw.org">starttiw.org</a>`

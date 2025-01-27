@@ -37,3 +37,4 @@ const faviconLink = document.createElement("link");
 faviconLink.rel = "icon";
 faviconLink.href = faviconHref;
 document.head.appendChild(faviconLink);
+

@@ -1,3 +1,5 @@
+@use "global";
+
 html, body {
     height: 100%;
 }
@@ -56,17 +58,31 @@ html, body {
     text-align: center;
     max-width: 150px;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.25s;
+    
 }
 
 .content-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.125);
 }
 
 .content-card img {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    filter: drop-shadow(0 0 5px global.$accent-light);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 1px solid var(--text-color);
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 10%;
+    cursor: pointer;
+    background-position: center;
+    transition-duration: 0.5s;
 }
 
 .content-card h3 {
@@ -100,8 +116,8 @@ html, body {
 }
 
 #movieIframe {
-    width: 100vw;
-    height: 90vh;
+    width: 100%;
+    height: 95vh;
 }
 
 .iframe-controls {

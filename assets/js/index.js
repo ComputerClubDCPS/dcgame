@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async function (e) {
 
     // Update the heading with the total number of games
     document.getElementById("heading").textContent =
-        "An archive of " + gameNames.length + " games and tons of movies";
+        gameNames.length + " games, unlimited movies and TV shows, a prοxy unblοcker, cloaking, and more!";
 
 
         let flavorText = [
@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", async function (e) {
 	    "over 8 million views!",
         ];
         
-        let randomFlavorText = flavorText[Math.floor(Math.random() * flavorText.length)];
+        /*let randomFlavorText = flavorText[Math.floor(Math.random() * flavorText.length)];
         
         document.getElementById("flavorText").innerHTML = randomFlavorText;
         
-        document.getElementById("navbar").style.display = "none";
+        document.getElementById("navbar").style.display = "none";*/
  
 });
 
@@ -106,3 +106,52 @@ function launchBlob() {
 		};
 	}
 }
+
+const tilesContainer = document.getElementById("tilesContainer");
+const tiles = Array.from(tilesContainer.children);
+const leftArrow = document.getElementById("leftArrow");
+const rightArrow = document.getElementById("rightArrow");
+
+let currentIndex = 0;
+
+const updateView = () => {
+    const tileWidth = tiles[0].offsetWidth;
+    const offset = -currentIndex * tileWidth;
+    tilesContainer.style.transform = `translateX(${offset}px)`;
+};
+
+const moveRight = () => {
+    currentIndex = (currentIndex + 1) % tiles.length; // Loop forward
+    updateView();
+};
+
+const moveLeft = () => {
+    currentIndex = (currentIndex - 1 + tiles.length) % tiles.length; // Loop backward
+    updateView();
+};
+
+rightArrow.addEventListener("click", moveRight);
+leftArrow.addEventListener("click", moveLeft);
+
+// Initialize view
+updateView();
+
+
+const featuredGame = "buckshot-roulette";
+
+document.getElementById("featuredGameTile").style.backgroundImage = `url('../assets/images/games/large/${featuredGame}.png')`;
+document.querySelector("#featuredGameTile h2").textContent = toTitleCase(featuredGame.replace(/-/g, " "));
+document.querySelector("#featuredGameTile #playThisGame").onclick = function() {
+    window.location.href = `games/play.html?g=${featuredGame}`;
+};
+
+
+const featuredMovieTVShow = "402431";
+const featuredMovieTVShowName = "Wicked";
+const featuredMovieTVShowType = "movie";
+
+document.getElementById("featuredMovieTVShowTile").style.backgroundImage = `url('../assets/images/watch/movie/large/${featuredMovieTVShow}.png')`;
+document.querySelector("#featuredMovieTVShowTile h2").textContent = featuredMovieTVShowName;
+document.querySelector("#featuredMovieTVShowTile #playThisGame").onclick = function() {
+    window.location.href = `watch/play.html?id=${featuredMovieTVShow}&type=${featuredMovieTVShowType}`;
+};

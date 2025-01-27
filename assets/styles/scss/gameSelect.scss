@@ -1,19 +1,28 @@
 @use "global";
 
+
+#gameAdContainer {
+    display: flex;
+}
+
+#adContainer {
+    width: 20%;
+}
+
 #gameContainer {
     display: flex;
     gap: 20px;
-    width: 100%;
+    width: 80%;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 50px;
 }
 
 .gameBox {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 10px;
-    filter: drop-shadow(0 0 10px global.$accent-light);
+    filter: drop-shadow(0 0 5px global.$accent-light);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -26,16 +35,30 @@
     cursor: pointer;
     background-position: center;
     transition-duration: 0.5s;
-    font-size: 150%;
+    font-size: 125%;
 }
 
 .gameBox:hover {
+    background-color: rgba(global.$accent-dark, 0.25);
     transform: scale(1.25, 1.25);
     z-index: 2;
+    font-size: 140%;
+    font-weight: 600;
+    text-shadow:
+    -1px -1px 0 global.$background-color,
+    1px -1px 0 global.$background-color,
+    -1px 1px 0 global.$background-color,
+    1px 1px 0 global.$background-color; 
+    background-blend-mode: darken;
 }
 
 #searchInput {
-    width: 25vw;
-    height: 25px;
+    width: 25%;
+    height: 5%;
     border-radius: 10px;
+    position: fixed;
+    bottom: 50px;
+    z-index: 5;
+    left: (calc(50% - 12.5%));
+    font-size: 125%;
 }
