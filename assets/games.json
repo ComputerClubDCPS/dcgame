@@ -5728,6 +5728,22 @@
     ]
   },
   {
+    "name": "level-devil",
+    "sourceRequired": false,
+    "creator": "",
+    "description": "",
+    "howToPlay": "",
+    "dateAdded": {
+      "month": 1,
+      "day": 27,
+      "year": 2025
+    },
+    "categories": [
+      "",
+      ""
+    ]
+  },
+  {
     "name": "time-shooter-3",
     "sourceRequired": false,
     "creator": "",
