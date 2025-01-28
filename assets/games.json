@@ -2592,6 +2592,22 @@
     ]
   },
   {
+    "name": "grand-theft-auto",
+    "sourceRequired": false,
+    "creator": "",
+    "description": "",
+    "howToPlay": "",
+    "dateAdded": {
+      "month": 1,
+      "day": 28,
+      "year": 2025
+    },
+    "categories": [
+      "",
+      ""
+    ]
+  },
+  {
     "name": "green",
     "sourceRequired": false,
     "creator": "",
