@@ -1,51 +1,26 @@
-<!Doctype html><html lang="en-us"><head><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Super Mario 64 | Mathgames66</title><link rel="icon" href="logo.png"><style>body, html{
-        margin: 0;
-        padding: 0;
-        width: 100vw;
-        min-height: 100vh;
-        font-family: Arial, Helvetica, sans-serif;
-        color: white;
-        background-color: black;
-        image-rendering: pixelated;
-        scrollbar-width: none;
-      }
-      ::-webkit-scrollbar {
-        display: none;
-      }
-      #container {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      canvas {
-        width: 100vw;
-        height: 100vh;
-      }</style></head><body><div id="container"><canvas class="emscripten" id="canvas"></canvas></div><script type="text/javascript">var Module = {
-        preRun: [],
-        postRun: [],
-        print: (function() {
-          return function(text) {
-            if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
-            console.log(text);
-          };
-        })(),
-        printErr: function(text) {
-          if (arguments.length > 1)
-            text = Array.prototype.slice.call(arguments).join(' ');
-          console.error(text);
-        },
-        canvas: (function() {
-          var canvas = document.getElementById('canvas');
-          canvas.width = window.innerWidth; // Todo: how to do this from c++
-          canvas.height = window.innerHeight;
-          canvas.addEventListener("webglcontextlost", function(e) {
-            alert('WebGL context lost. You will need to reload the page.');
-            e.preventDefault();
-          }, false);
-          return canvas;
-        })(),
-        setStatus: function(text) {
-        }
-      };</script><script async type="text/javascript" src="sm64.us.f3dex2e.js"></script><script type="application/javascript" src="/js/main.js"></script></body></html>
+<html>
+    <head>
+        <!--HTML file auto generated using EmulatorJS codehelper-->
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="width:100%;height:100%;max-width:100%">
+            <div id="game"></div>
+        </div>
+        <script>
+            EJS_player = '#game';
+            EJS_core = 'n64';
+            EJS_gameName = 'sm64x';
+            EJS_color = '#7b43ed';
+            EJS_startOnLoaded = true;
+            EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
+            EJS_gameUrl = new Blob([Uint8Array.from(window.gameData)]);
+        </script>
+        <script src='https://cdn.emulatorjs.org/stable/data/loader.js'></script>
+    </body>
+</html>
