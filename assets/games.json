@@ -5342,6 +5342,23 @@
       "",
       ""
     ]
+
+  },
+  {
+    "name": "super-mario-kart-snes",
+    "sourceRequired": false,
+    "creator": "",
+    "description": "",
+    "howToPlay": "",
+    "dateAdded": {
+      "month": 1,
+      "day": 29,
+      "year": 2025
+    },
+    "categories": [
+      "",
+      ""
+    ]
   },
   {
     "name": "super-mario-world-1990",
