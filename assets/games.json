@@ -1040,6 +1040,22 @@
     ]
   },
   {
+    "name": "majoras-mask",
+    "sourceRequired": false,
+    "creator": "",
+    "description": "",
+    "howToPlay": "",
+    "dateAdded": {
+      "month": 1,
+      "day": 30,
+      "year": 2025
+    },
+    "categories": [
+      "",
+      ""
+    ]
+  },
+  {
     "name": "burnout-drift-3",
     "sourceRequired": false,
     "creator": "",
