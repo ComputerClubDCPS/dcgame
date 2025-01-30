@@ -89,9 +89,9 @@ function launchBlob() {
 	const currentSiteUrl = window.location.href + '?redirect=true';
     let htmlContent;
     if (window.location.host === 'localhost:8000') {
-	    htmlContent = `<iframe src="http://${window.location.host}/index.html"></iframe>` + '<style>iframe{border:none;position:fixed;top:0;left:0;width:100%;height:100%;}</style>';
+	    htmlContent = `<iframe src="https://${window.location.host}/index.html"></iframe>` + '<style>iframe{border:none;position:fixed;top:0;left:0;width:100%;height:100%;}</style>';
     } else {
-        htmlContent = `<iframe src="http://${window.location.host}/index.html"></iframe>` + '<style>iframe{border:none;position:fixed;top:0;left:0;width:100%;height:100%;}</style>';
+        htmlContent = `<iframe src="https://${window.location.host}/index.html"></iframe>` + '<style>iframe{border:none;position:fixed;top:0;left:0;width:100%;height:100%;}</style>';
     }
     const blob = new Blob([htmlContent], {
 	    type: 'text/html'
