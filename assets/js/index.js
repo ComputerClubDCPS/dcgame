@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", async function (e) {
             "new update 🤯",
             "wisdom is my king", //btw this is my friends name
 	    "over 8 million views!",
+	    "over 1 million proxy requests!",
+            "🔴RED"
         ];
         
         /*let randomFlavorText = flavorText[Math.floor(Math.random() * flavorText.length)];
