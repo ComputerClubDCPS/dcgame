@@ -28,3 +28,13 @@ async function registerSW() {
     scope: __uv$config.prefix,
   });
 }
+
+document.getElementById('uv-register-sw').addEventListener('click', async () => {
+    try {
+        await navigator.serviceWorker.register('/service-worker.js');
+        alert('Service Worker registered successfully.');
+        location.reload(); // Reload the page after registering the service worker
+    } catch (error) {
+        console.error('Service Worker registration failed:', error);
+    }
+});
