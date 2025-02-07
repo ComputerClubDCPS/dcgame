@@ -29,32 +29,37 @@ async function registerSW() {
   });
 }
 
-document.getElementById('uv-register-sw').addEventListener('click', async () => {
-    try {
-        await navigator.serviceWorker.register('/service-worker.js');
-        alert('Service Worker registered successfully.');
-        location.reload(); // Reload the page after registering the service worker
-    } catch (error) {
-        console.error('Service Worker registration failed:', error);
+document.addEventListener('DOMContentLoaded', () => {
+    const registerButton = document.getElementById('uv-register-sw');
+    if (registerButton) {
+        registerButton.addEventListener('click', async () => {
+            try {
+                await navigator.serviceWorker.register('/service-worker.js');
+                alert('Service Worker registered successfully.');
+                location.reload(); // Reload the page after registering the service worker
+            } catch (error) {
+                console.error('Service Worker registration failed:', error);
+            }
+        });
+    }
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            if (registrations.length === 0) {
+                window.location.href = '404.html'; // Redirect to 404.html if no service worker is registered
+            } else {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(function(registration) {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('Service Worker registration failed:', error);
+                        window.location.href = '404.html'; // Redirect to 404.html on failure
+                    });
+            }
+        });
+    } else {
+        console.log('Service Worker is not supported in this browser.');
+        window.location.href = '404.html'; // Redirect to 404.html if Service Worker is not supported
     }
 });
-
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.getRegistrations().then(function(registrations) {
-        if (registrations.length === 0) {
-            window.location.href = '404.html'; // Redirect to 404.html if no service worker is registered
-        } else {
-            navigator.serviceWorker.register('/service-worker.js')
-                .then(function(registration) {
-                    console.log('Service Worker registered with scope:', registration.scope);
-                })
-                .catch(function(error) {
-                    console.log('Service Worker registration failed:', error);
-                    window.location.href = '404.html'; // Redirect to 404.html on failure
-                });
-        }
-    });
-} else {
-    console.log('Service Worker is not supported in this browser.');
-    window.location.href = '404.html'; // Redirect to 404.html if Service Worker is not supported
-}
