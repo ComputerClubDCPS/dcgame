@@ -1,0 +1,55 @@
+@use 'global';
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#partnerContainer {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    width: 15%;
+    height: 90%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#partnerTitle {
+    height: 10%;
+    right: 0;
+    top: 0;
+    position: absolute;
+    width: 15%;
+}
+
+#partnerSection {
+    width: 100%;
+}
+
+.partnerImg {
+    width: 75%;
+    transition-duration: 0.1s;
+}
+
+.partnerLink {
+    width: 75%;
+    background-color: rgba(global.$accent-dark, 0.5);
+    padding: 5px;
+}
+
+.partnerLink:hover {
+    background-color: rgba(global.$accent-dark, 0.75);
+}
+
+#infoSection {
+    width: 80%;
+    height: 90vh;
+    margin: 10px;
+    padding: 10px;
+    top: 0;
+    left: 0;
+
+}
+

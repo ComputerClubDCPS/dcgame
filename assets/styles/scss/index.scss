@@ -10,7 +10,7 @@
 
 .tile {
     flex: 0 0 calc(60vw);
-    height: 300px;
+    height: 250px;
     margin: 0 10px;
     background: rgba(global.$accent-dark, 0.5);
     border: 2px solid global.$text-color;
@@ -30,6 +30,17 @@
 .arrow {
     margin-top: 10px;
     filter: drop-shadow(0 0 1px global.$accent-light);
+    width: 50px;
+    height: 25px;
+}
+
+.arrow:hover {
+    transform: scale(1.1);
+}
+
+
+.arrow:active {
+    transform: scale(1.25);
 }
 
 #newsList li {
@@ -64,6 +75,10 @@
         filter: none;
         background: global.$accent-light !important;
     }
+
+    button:hover {
+        transform: scale(1.1);
+    }
 }
 
 #infoSection {
@@ -81,12 +96,13 @@
 .playButtonsContainer {
     display: flex;
     gap: 10px;
+    margin-bottom: 10px;
 }
 
 .playButtons{
     background: linear-gradient(0deg, rgba(global.$accent-dark, 0.5), rgba(global.$accent-dark, 0.25));
     color: #eeeeee;
-    font-size: 150%;
+    font-size: 125%;
     padding: 50px;
     text-shadow: 0 0 20px global.$accent-light;
     border-radius: 20px;
@@ -105,7 +121,7 @@
 .smallerPlayButtons{
     background: linear-gradient(0deg, rgba(global.$accent-dark, 0.5), rgba(global.$accent-dark, 0.25));
     color: #eeeeee;
-    font-size: 125%;
+    font-size: 110%;
     padding: 50px;
     text-shadow: 0 0 20px global.$accent-light;
     border-radius: 20px;

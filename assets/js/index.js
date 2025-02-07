@@ -148,8 +148,8 @@ document.querySelector("#featuredGameTile #playThisGame").onclick = function() {
 };
 
 
-const featuredMovieTVShow = "402431";
-const featuredMovieTVShowName = "Wicked";
+const featuredMovieTVShow = "939243";
+const featuredMovieTVShowName = "Sonic the Hedgehog 3";
 const featuredMovieTVShowType = "movie";
 
 document.getElementById("featuredMovieTVShowTile").style.backgroundImage = `url('../assets/images/watch/movie/large/${featuredMovieTVShow}.png')`;

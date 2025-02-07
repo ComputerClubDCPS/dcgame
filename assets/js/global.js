@@ -80,8 +80,33 @@ document.getElementById("sidebarMenu").innerHTML = `
             <li><a onclick="redirect('/watch/select.html')">Watch <i class="fa-1x fa-solid fa-play"></i></a></li>
             <li><a onclick="redirect('/chat.html')">Chat <i class="fa-1x fa-solid fa-comments"></i></a></li>
             <li><a onclick="redirect('/active/index.html')">Proxy <i class="fa-1x fa-solid fa-unlock"></i></a></li>
+            <li><a onclick="redirect('/info/index.html')">Info <i class="fa-1x fa-solid fa-info-circle"></i></a></li>
 
             <img src="/assets/images/Title.png" id="smallLogo">
 `;
 
-document.querySelector("footer").innerHTML = `By using LupineVault you agree to our <a href="privacy-policy.html">Privacy Policy</a> and <a href="tos.html">Terms of Service</a> - Thanks to our sponsors <a href="https://screen.studio/">Screen Studio</a> for their support - Thanks to our partners <a href="https://benrogo.net">benrogo.net</a> and <a href="https://starttiw.org">starttiw.org</a>`
+document.querySelector("footer").innerHTML = `By using LupineVault you agree to our <a href="/info/privacy-policy.html">Privacy Policy</a> and <a href="/info/tos.html">Terms of Service</a> - Thanks to our sponsors <a href="https://screen.studio/">Screen Studio</a> for their support`
+
+// Set a default panic key if not already set
+if (!localStorage.getItem("panicKey")) {
+    localStorage.setItem("panicKey", "`");
+  }
+  
+  // Event listener for panic redirect
+  document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.key === localStorage.getItem("panicKey")) {
+      location.href = localStorage.getItem("panicRedirectURL") || "https://classroom.google.com";
+    }
+  });
+  
+  // Set page title from localStorage if available
+  if (localStorage.getItem("pageTitle")) {
+    document.title = localStorage.getItem("pageTitle");
+  }
+  
+  // Set favicon from localStorage or use the default
+  const faviconHref = localStorage.getItem("favicon") || "../LupineVault/assets/favicons/favicon.ico";
+  const faviconLink = document.createElement("link");
+  faviconLink.rel = "icon";
+  faviconLink.href = faviconHref;
+  document.head.appendChild(faviconLink);
