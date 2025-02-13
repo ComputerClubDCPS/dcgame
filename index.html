@@ -87,17 +87,20 @@
             var countdownElement = document.getElementById('countdown');
             var countdown = 5;
 
-            popup.style.display = 'block';
-            countdownElement.innerText = countdown + ' seconds remaining';
-
-            var interval = setInterval(function() {
-                countdown--;
+            if (!localStorage.getItem('popupShown')) {
+                popup.style.display = 'block';
                 countdownElement.innerText = countdown + ' seconds remaining';
-                if (countdown <= 0) {
-                    clearInterval(interval);
-                    popup.style.display = 'none';
-                }
-            }, 1000);
+
+                var interval = setInterval(function() {
+                    countdown--;
+                    countdownElement.innerText = countdown + ' seconds remaining';
+                    if (countdown <= 0) {
+                        clearInterval(interval);
+                        popup.style.display = 'none';
+                        localStorage.setItem('popupShown', 'true');
+                    }
+                }, 1000);
+            }
         };
     </script>
 </body>
