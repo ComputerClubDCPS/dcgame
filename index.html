@@ -87,7 +87,7 @@
             var countdownElement = document.getElementById('countdown');
             var countdown = 5;
 
-            if (!localStorage.getItem('popupShown')) {
+            if (!localStorage.getItem('hoodiePopup')) {
                 popup.style.display = 'block';
                 countdownElement.innerText = countdown + ' seconds remaining';
 
@@ -97,7 +97,7 @@
                     if (countdown <= 0) {
                         clearInterval(interval);
                         popup.style.display = 'none';
-                        localStorage.setItem('popupShown', 'true');
+                        localStorage.setItem('hoodiePopup', 'true');
                     }
                 }, 1000);
             }
