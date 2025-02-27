@@ -55,15 +55,15 @@ async function fetchContent(page = 1, query = "", type = "movie") {
 
     if (type === "movie") {
         if (query) {
-            endpoint = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}`;
+            endpoint = `/movieapi/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}`;
         } else {
-            endpoint = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`;
+            endpoint = `/movieapi/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`;
         }
     } else if (type === "tv") {
         if (query) {
-            endpoint = `https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}`;
+            endpoint = `/movieapi/search/tv?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}`;
         } else {
-            endpoint = `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en-US&page=${page}`;
+            endpoint = `/movieapi/tv/popular?api_key=${API_KEY}&language=en-US&page=${page}`;
         }
     }
 
