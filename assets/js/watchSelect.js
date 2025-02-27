@@ -2,7 +2,7 @@
 //tf7 used chatgpt because he was tired and it was 3am and his friend wanted to watch moana 2 bc hes probably gay
 
 const API_KEY = "2713804610e1e236b1cf44bfac3a7776";
-const IMAGE_BASE_URL = "/movieimg";
+const IMAGE_BASE_URL = "/movieimg/";
 
 let currentPage = 1;
 let isLoading = false;
