@@ -2240,6 +2240,22 @@
     ]
   },
   {
+    "name": "fallout-2",
+    "sourceRequired": false,
+    "creator": "",
+    "description": "",
+    "howToPlay": "",
+    "dateAdded": {
+      "month": 3,
+      "day": 2,
+      "year": 2025
+    },
+    "categories": [
+      "",
+      ""
+    ]
+  },
+  {
     "name": "flappy-bird",
     "sourceRequired": false,
     "creator": "",
