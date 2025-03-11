@@ -79,7 +79,6 @@ document.getElementById("sidebarMenu").innerHTML = `
             <li><a onclick="redirect('/games/select.html')">Games <i class="fa-1x fa-solid fa-gamepad"></i></a></li>
             <li><a onclick="redirect('/watch/select.html')">Watch <i class="fa-1x fa-solid fa-play"></i></a></li>
             <li><a onclick="redirect('/chat.html')">Chat <i class="fa-1x fa-solid fa-comments"></i></a></li>
-            <li><a onclick="redirect('/active/index.html')">Proxy <i class="fa-1x fa-solid fa-unlock"></i></a></li>
             <li><a onclick="redirect('/info/index.html')">Info <i class="fa-1x fa-solid fa-info-circle"></i></a></li>
 
             <img src="/assets/images/Title.png" id="smallLogo">
