@@ -14,7 +14,7 @@
                   const htmlFileName = file.replace(/\\.md\$/, '.html');
                   const htmlFilePath = path.join(HTML_OUTPUT_DIR, htmlFileName);
 
-                  console.log(\`Processing \${file} -> \${htmlFileName}\`);
+                  console.log(`Processing ${file} -> ${htmlFileName}`);
 
                   const fileContent = fs.readFileSync(mdFilePath, 'utf8');
 
