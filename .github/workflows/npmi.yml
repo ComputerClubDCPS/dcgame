@@ -1,0 +1,77 @@
+name: Manual Package Install & Commit
+
+# Controls when the workflow can be triggered manually
+on:
+  workflow_dispatch:
+    inputs:
+      packageName:
+        description: 'The name of the npm package to install (e.g., lodash)'
+        required: true
+        type: string
+      
+      packageVersion:
+        description: 'The version to install (e.g., latest, or a specific version like 1.2.3)'
+        required: false
+        default: 'latest'
+        type: string
+
+jobs:
+  install_and_commit:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Checkout the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up the correct environment (Node.js)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Install existing dependencies (optional, but good practice)
+      - name: Install existing dependencies
+        run: npm ci # Use 'npm ci' for clean, reproducible CI installs
+
+      # 4. Install the specified package
+      - name: Install specified package
+        # This command installs the package, saves it to package.json/package-lock.json, and saves node_modules
+        run: npm install ${{ github.event.inputs.packageName }}@${{ github.event.inputs.packageVersion }}
+
+      # 5. Verify Changes (Crucial step to see what changed)
+      # Check if package.json or package-lock.json files were modified
+      - name: Check for modified files
+        id: changed
+        run: |
+          if git diff --exit-code package.json package-lock.json; then
+            echo "No dependency changes detected."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Dependency files have changed."
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      # 6. Commit and Push changes ONLY IF files were modified
+      - name: Commit and Push Changes
+        if: steps.changed.outputs.changed == 'true'
+        run: |
+          echo "Committing changes to main branch..."
+          
+          # Configure Git user identity for the commit
+          git config user.name NPM Install Bot[bot]
+          git config user.email npmi[bot]@users.noreply.github.com
+          
+          # Add the modified package files
+          git add package.json package-lock.json
+          
+          # Create the commit message dynamically
+          COMMIT_MSG="chore(deps): Install ${{ github.event.inputs.packageName }}@${{ github.event.inputs.packageVersion }}"
+          git commit -m "$COMMIT_MSG"
+          
+          # Push back to the main branch
+          git push
+        
+      - name: Final Status
+        if: steps.changed.outputs.changed == 'false'
+        run: echo "Workflow finished. No commit was pushed because dependencies did not change."
