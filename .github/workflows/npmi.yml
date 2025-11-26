@@ -52,25 +52,35 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      # 6. Commit and Push changes ONLY IF files were modified
+           # 6. Commit and Push Changes
       - name: Commit and Push Changes
         if: steps.changed.outputs.changed == 'true'
         run: |
           echo "Committing changes to main branch..."
           
-          # Configure Git user identity for the commit
-          git config user.name NPM Install Bot[bot]
-          git config user.email npmi[bot]@users.noreply.github.com
+          # --- START HARDENED GIT CONFIGURATION ---
+          # Use the standard GitHub Actions bot identity
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
+          # --- END HARDENED GIT CONFIGURATION ---
           
           # Add the modified package files
           git add package.json package-lock.json
           
           # Create the commit message dynamically
           COMMIT_MSG="chore(deps): Install ${{ github.event.inputs.packageName }}@${{ github.event.inputs.packageVersion }}"
-          git commit -m "$COMMIT_MSG"
           
-          # Push back to the main branch
-          git push
+          # Check if there are actual changes to commit (safety net)
+          if git diff --staged --quiet; then
+            echo "No files staged for commit. Aborting push."
+          else
+            echo "Committing changes..."
+            git commit -m "$COMMIT_MSG"
+            
+            # Push back to the main branch using the secure token environment variable
+            # NOTE: The token is needed here because the default setup might not be authenticated for pushing
+            git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          fi
         
       - name: Final Status
         if: steps.changed.outputs.changed == 'false'
