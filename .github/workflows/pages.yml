@@ -1,0 +1,47 @@
+# File: .github/workflows/deploy.yml
+name: Deploy GitHub Pages
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push events but only for the main branch
+  push:
+    branches: [ main ]
+
+# Sets up a job called 'deploy'
+jobs:
+  build_and_deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Node.js (if you are using Node-based tools like npm or Yarn for building)
+      #    If you are using Jekyll or Hugo, you might replace this with setup-ruby or setup-go
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use the current LTS version
+
+      # 3. Install dependencies (Example for a Node project like React/Vue/Svelte)
+      - name: Install dependencies
+        run: npm install
+        # If your project uses yarn: run: yarn install
+
+      # 4. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # The Personal Access Token used to deploy (automatically provided by GitHub)
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          
+          # The directory containing the built static files to be published
+          publish_dir: ./  # <-- IMPORTANT: Change 'docs' if your build output is elsewhere (e.g., 'public' for Hugo)
+          
+          # Set the branch where the site files will be pushed (GitHub Pages default)
+          publish_branch: gh-pages
+          
+          # Add a CNAME file if you use a custom domain
+          # cname: yourdomain.com
