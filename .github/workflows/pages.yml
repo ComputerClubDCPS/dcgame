@@ -25,6 +25,11 @@ jobs:
         with:
           node-version: '20'
 
+      # --- ADD THIS DIAGNOSTIC STEP ---
+      - name: Check script directory contents
+        run: ls -la scripts/
+      # --------------------------------
+
       # 5. Run the Conversion Script
       - name: Run Conversion Script (MD -> HTML in root)
         run: node ./scripts/convert.js
