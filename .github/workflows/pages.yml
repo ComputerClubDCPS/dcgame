@@ -27,7 +27,7 @@ jobs:
 
       # 5. Run the Conversion Script
       - name: Run Conversion Script (MD -> HTML in root)
-        run: node scripts/convert.js
+        run: node ./scripts/convert.js
 
       # 6. Check for changes (Package + Generated HTML files)
       - name: Check for modified files
