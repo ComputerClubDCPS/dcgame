@@ -32,7 +32,7 @@ jobs:
 
       # 3. Install existing dependencies (optional, but good practice)
       - name: Install existing dependencies
-        run: npm ci # Use 'npm ci' for clean, reproducible CI installs
+        run: npm i # Use 'npm ci' for clean, reproducible CI installs
 
       # 4. Install the specified package
       - name: Install specified package
