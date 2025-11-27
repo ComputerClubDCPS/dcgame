@@ -27,8 +27,47 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Transform
-        run: node < ./scripts/remark.js
+            # 5. Run the Conversion Script (EMBEDDED SCRIPT)
+      - name: Run Conversion Script (MD -> HTML in root)
+        run: |
+          node <<EOF
+          const fs = require('fs');
+          const path = require('path');
+          const remark = require('remark');
+          const html = require('remark-html');
+
+          // Adjust paths based on where the workflow runner executes (repository root)
+          const MD_SOURCE_DIR = path.join(/, '..', 'data', 'md');
+          const HTML_OUTPUT_DIR = path.join(/, '..'); // Output to repository root
+
+          async function processMarkdown() {
+              // Ensure the script assumes it's running from the root of the repo, 
+              // which is usually where __dirname resolves to in these actions.
+              const files = fs.readdirSync(MD_SOURCE_DIR).filter(file => file.endsWith('.md'));
+
+              for (const file of files) {
+                  const mdFilePath = path.join(MD_SOURCE_DIR, file);
+                  const htmlFileName = file.replace(/\\.md\$/, '.html');
+                  const htmlFilePath = path.join(HTML_OUTPUT_DIR, htmlFileName);
+
+                  console.log(`Processing ${file} -> ${htmlFileName}`);
+
+                  const fileContent = fs.readFileSync(mdFilePath, 'utf8');
+
+                  const result = await remark()
+                      .use(html)
+                      .process(fileContent);
+
+                  fs.writeFileSync(htmlFilePath, String(result));
+              }
+              console.log('Markdown processing complete.');
+          }
+
+          processMarkdown().catch(err => {
+              console.error('Error during Markdown processing:', err);
+              process.exit(1);
+          });
+          EOF
     
   deploy:
     environment:
