@@ -28,26 +28,35 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
             # 5. Run the Conversion Script (EMBEDDED SCRIPT)
+            # 5. Run the Conversion Script (EMBEDDED SCRIPT - Correctly Quoted)
       - name: Run Conversion Script (MD -> HTML in root)
         run: |
-          node <<EOF
+          node <<'EOF'
           const fs = require('fs');
           const path = require('path');
           const remark = require('remark');
           const html = require('remark-html');
 
-          // Adjust paths based on where the workflow runner executes (repository root)
-          const MD_SOURCE_DIR = path.join(/, '..', 'data', 'md');
-          const HTML_OUTPUT_DIR = path.join(/, '..'); // Output to repository root
+          // We must define __dirname relative to the execution context (the repo root) 
+          // OR ensure the path logic works from the context where the file is being run.
+          // Since the script expects paths relative to its own location (scripts/), 
+          // and we are now running it from the repo root, we might need to adjust the paths slightly.
+
+          // Since we are running 'node' from the repo root, the script logic should be adapted:
+          const SCRIPT_DIR = path.join(process.cwd(), 'scripts'); // Get path to scripts dir dynamically
+          
+          // Adjust MD_SOURCE_DIR to be relative to the repo root (where we are executing node)
+          const MD_SOURCE_DIR = path.join(process.cwd(), 'data', 'md'); 
+          const HTML_OUTPUT_DIR = process.cwd(); // Output to repository root (where we are running node)
+
 
           async function processMarkdown() {
-              // Ensure the script assumes it's running from the root of the repo, 
-              // which is usually where __dirname resolves to in these actions.
               const files = fs.readdirSync(MD_SOURCE_DIR).filter(file => file.endsWith('.md'));
 
               for (const file of files) {
                   const mdFilePath = path.join(MD_SOURCE_DIR, file);
-                  const htmlFileName = file.replace(/\\.md\$/, '.html');
+                  // The regex must be escaped properly for JS syntax
+                  const htmlFileName = file.replace(/\.md$/, '.html'); 
                   const htmlFilePath = path.join(HTML_OUTPUT_DIR, htmlFileName);
 
                   console.log(`Processing ${file} -> ${htmlFileName}`);
@@ -68,6 +77,7 @@ jobs:
               process.exit(1);
           });
           EOF
+
     
   deploy:
     environment:
