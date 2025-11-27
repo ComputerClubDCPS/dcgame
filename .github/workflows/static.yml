@@ -28,7 +28,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Transform
-        run: node ./scripts/remark.js
+        run: node < ./scripts/remark.js
     
   deploy:
     environment:
